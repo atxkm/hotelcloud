@@ -726,7 +726,7 @@ define('modules/room/components/manage/build', ['modules/room/module'], function
         popupService.confirm('是否删除楼栋和房间\uFF1F').ok(function() {
           httpService.post('/buildinghotel/delBuildingHotel', {
             buildingId: id
-          }).then(function(result) {
+          }).then(function() {
             popupService.information();
             me.load();
           });
@@ -734,11 +734,12 @@ define('modules/room/components/manage/build', ['modules/room/module'], function
       };
       this.default = function(id) {
         popupService.confirm('是否设为默认楼栋\uFF1F').ok(function() {
-          // ajaxService.post('/roomhotel/delRoomHotel', {
-          //   id: id
-          // }).then(function() {
-          //   me.tableParams.reload();
-          // });
+          httpService.post('/buildinghotel/modifyBuildingHotel', {
+            buildingId: id,
+            sysDefault: 1,
+          }).then(function() {
+            me.load();
+          });
         });
       };
       this.load = function() {
@@ -1059,7 +1060,6 @@ define('modules/room/controllers/rooms', ['modules/room/module'], function(modul
             };
             dataArr.push(tempData);
           }
-          console.log(JSON.stringify(dataArr));
           httpService.post('/roomhotel/addRoomHotelBatch', {
             roomHotelList: dataArr
           }).then(function(result) {
@@ -1443,12 +1443,21 @@ define('modules/room/controllers/mode', ['modules/room/module'], function(module
         });
       };
       this.off = function(row) {
-        popupService.confirm('是否关闭设备\uFF1F').ok(function() {
-          // httpService.post('/defaultval/delDefaultval', {
-          //   modelid: row.modelid
-          // }).then(function(result) {
-          //   me.tableParams.reload();
-          // });
+        var msg, status;
+        if (row.status == 0) {
+          msg = '是否启用设备\uFF1F';
+          status = 1;
+        } else {
+          msg = '是否关闭设备\uFF1F';
+          status = 0;
+        }
+        popupService.confirm(msg).ok(function() {
+          httpService.post('/modifyDefaultval/defaultval', {
+            modelid: row.modelid,
+            status: status
+          }).then(function(result) {
+            me.tableParams.reload();
+          });
         });
       };
     }
