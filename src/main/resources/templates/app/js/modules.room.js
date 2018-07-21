@@ -573,7 +573,7 @@ define('modules/room/components/rcu/rcu', ['modules/room/module'], function(modu
             data: me.floorParams
           });
           me.tableParams3 = new tableParameter({
-            url: '/rcu/findRcu',
+            url: '/rcuSettime/findRcuSettime',
             data: me.floorParams
           });
         });
@@ -734,7 +734,7 @@ define('modules/room/components/manage/build', ['modules/room/module'], function
       };
       this.default = function(id) {
         popupService.confirm('是否设为默认楼栋\uFF1F').ok(function() {
-          httpService.post('/roomhotel/defaultRoomHotel', {
+          httpService.post('/buildinghotel/defaultBuildingHotel', {
             buildingId: id,
             sysDefault: 1,
           }).then(function() {
