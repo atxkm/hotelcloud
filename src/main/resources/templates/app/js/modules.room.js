@@ -734,7 +734,7 @@ define('modules/room/components/manage/build', ['modules/room/module'], function
       };
       this.default = function(id) {
         popupService.confirm('是否设为默认楼栋\uFF1F').ok(function() {
-          httpService.post('/buildinghotel/modifyBuildingHotel', {
+          httpService.post('/roomhotel/defaultRoomHotel', {
             buildingId: id,
             sysDefault: 1,
           }).then(function() {
