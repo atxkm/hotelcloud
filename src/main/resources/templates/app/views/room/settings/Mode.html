@@ -12,7 +12,7 @@
       <td title="'预设时间'">{{row.modelsettime}}</td>
       <td title="'操作'">
         <div class="btn-group btn-group-xs">
-          <button ng-if="!row.status" class="btn btn-error" ng-click="me.off(row)">
+          <button ng-if="!row.status" class="btn" ng-click="me.off(row)">
             <i class="glyphicon glyphicon-off"></i>
           </button>
           <button ng-if="row.status" class="btn btn-success" ng-click="me.off(row)">
