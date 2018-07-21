@@ -1,0 +1,65 @@
+<div ng-controller="modules.room.controllers.parameterSettings as me" ng-init="me.load()">
+    <div class="navbar navbar-default navbar-static-top">
+        <ul class="nav navbar-nav" role="tablist">
+            <li role="presentation" ng-class="{'active':$index===0}" ng-repeat="category in me.list">
+                <a ng-href="#{{category.topparamtype}}" role="tab" data-toggle="tab">
+                    <strong>{{category.topparamtype}}</strong>
+                </a>
+            </li>
+        </ul>
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse">
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-default" ng-click="me.save()">
+                            <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> 保存
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="tab-content">
+        <div ng-repeat="category in me.list" role="tabpanel" class="tab-pane" ng-class="{'active':$index===0}" id="{{category.topparamtype}}">
+            <div class="col-md-6" ng-repeat="group in category.groups">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-bottom: 0">
+                        <h4>
+                            <strong>{{group.parambelongtype}}</strong>
+                        </h4>
+                        <hr>
+                        <div class="row">
+                            <div ng-class="{'col-md-4':paramItem.paramtype==='开关量', 'col-md-6':paramItem.paramtype==='数值', 'col-md-12':paramItem.paramtype==='时间段'}"
+                                ng-repeat="paramItem in group.parameters">
+                                <div class="panel panel-default">
+                                    <div class="panel-body form-inline">
+                                        <label class="form-control-static">{{paramItem.paramname}}</label>
+                                        <div class="btn-group pull-right" ng-if="paramItem.paramtype==='开关量'">
+                                            <button class="btn btn-default" ng-click="paramItem.setval='1'" ng-class="{'btn-primary active':paramItem.setval==='1'}"
+                                                ng-disabled="paramItem.setval==='1'">开</button>
+                                            <button class="btn btn-default" ng-click="paramItem.setval='0'" ng-class="{'btn-primary active':paramItem.setval!=='1'}"
+                                                ng-disabled="paramItem.setval!=='1'">关</button>
+                                        </div>
+                                        <div class="input-group pull-right" ng-if="paramItem.paramtype==='数值'">
+                                            <div class="input-group-btn">
+                                                <button class="btn btn-default" ng-click="paramItem.setval=me.valueDown(paramItem.setval)">
+                                                    <i class="glyphicon glyphicon-minus"></i>
+                                                </button>
+                                            </div>
+                                            <input class="form-control" ng-model="paramItem.setval">
+                                            <div class="input-group-btn">
+                                                <button class="btn btn-default" ng-click="paramItem.setval=me.valueUp(paramItem.setval)">
+                                                    <i class="glyphicon glyphicon-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

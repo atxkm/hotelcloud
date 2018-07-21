@@ -1,0 +1,31 @@
+<div ng-controller="modules.mobileui.controllers.login as me" class="layout loginbg">
+    <div class="modal-dialog loginwindow" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <br/>
+                <div class="panel-body text-center">
+                    <img width="120px" src="./images/logo.png" />
+                </div>
+                <form class="container-fluid" name="form" role="form">
+                    <div class="form-group form-group-lg">
+                        <div>
+                            <input type="text" class="form-control" name="Username" ng-model="me.Username" placeholder="账号" required/>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-lg">
+                        <div>
+                            <input type="password" class="form-control" name="Password" ng-model="me.Password" placeholder="密码" required/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <!-- <a href="">忘记密码？</a> -->
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-primary btn-lg btn-block" ng-disabled="form.$invalid" ng-click="me.login()">登录</button>
+                    </div>
+                </form>
+                <br/>
+            </div>
+        </div>
+    </div>
+</div>

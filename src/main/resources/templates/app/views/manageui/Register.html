@@ -1,0 +1,46 @@
+<div class="loginbg">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="panel-body text-center">
+                    <div>
+                        <img width="120px" src="./images/logo.png" />
+                    </div>
+                    <!-- <h2 class="col-md-8">欢迎注册</h2> -->
+                </div>
+                <form class="container-fluid" name="form" role="form">
+                    <div class="form-group">
+                        <div>
+                            <input type="text" class="form-control" name="Username" ng-model="me.Username" placeholder="用户名" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <input type="text" class="form-control" name="DeviceCode" ng-model="me.DeviceCode" placeholder="机器号" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <input type="text" class="form-control" name="RegisterCode" ng-model="me.RegisterCode" placeholder="注册号码" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label><input type="checkbox"/> 我同意注册协议</label>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary col-md-12" ng-disabled="form.$invalid">注册</button>
+                    </div>
+                    <div class="form-group text-center">
+                        <div>
+                            <label class="form-control-static"><a href="">点击查看注册协议 ></a></label>
+                        </div>
+                        <div>
+                            <label class="form-control-static"><a ng-href="#/login">返回</a></label>
+                        </div>
+                    </div>
+                </form>
+                <br/>
+            </div>
+        </div>
+    </div>
+</div>

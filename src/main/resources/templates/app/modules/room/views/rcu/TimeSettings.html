@@ -1,0 +1,53 @@
+<div class="panel panel-info">
+    <div class="panel-heading" ng-show="!current.Floor">
+        <span class="panel-title">请选择楼层</span>
+    </div>
+    <div class="panel-heading" ng-show="current.Floor">
+        <span class="panel-title">{{current.BuildName}} - {{current.Floor}} 层</span>
+    </div>
+    <!-- <div class="navbar navbar-default navbar-static-top" ng-show="current.Floor" style="margin:0">
+        <div class="container-fluid">
+            <div class="navbar-collapse collapsed">
+                <div class="navbar-form navbar-right">
+                    <button class="btn btn-default" ng-click="roomController.add()"><i class="glyphicon glyphicon-plus-sign"></i> 添加</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="table-condensed">
+        <table ng-table="rcu.timeTable" class="table table-striped table-hover" ng-show="current.Floor">
+            <tr ng-repeat="row in $data">
+                <!-- <td>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label>房间号</label>
+                                <span class="form-control-static" ng-bind=""></span>
+                            </div>
+                        </div>
+                    </div>
+                </td> -->
+                <td title="'房间号'">{{row.roomid}}</td>
+                <td title="'房间类型'">{{row.roomtype}}</td>
+                <td title="'连接'">{{row.link}}</td>
+                <td title="'30毫秒'">{{row.millisecondth}}</td>
+                <td title="'120毫秒'">{{row.millisecondtw}}</td>
+                <td title="'秒'">{{row.second}}</td>
+                <td title="'分'">{{row.minutes}}</td>
+                <td title="'小时'">{{row.hour}}</td>
+                <td title="'修正值'">{{row.torevise}}</td>
+                <td title="'操作'">
+                    <div class="btn-group btn-group-xs">
+                        <button class="btn btn-default">
+                            <i class="glyphicon glyphicon-pencil"></i>
+                        </button>
+                        <button class="btn btn-danger">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div ng-pager="rcu.timeTable"></div>
+</div>

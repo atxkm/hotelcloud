@@ -1,0 +1,40 @@
+<div class="layout" ng-controller="modules.mobileui.controllers.curtains as me">
+    <div style="position: relative; height: 50%">
+        <div class="mobile-center" style="padding: 10px">
+            <a class="btn-ellipse-sm">窗帘一</a>
+        </div>
+        <div class="text-center" style="margin-bottom: 10px">
+            <img src="/mobile/images/curtauns-open.png" width="160px" />
+        </div>
+        <div>
+            <div class="mobile-col" style="width: 33.333333%">
+                <a class="btn-rectangle-sm" ng-click="open(1)">开</a>
+            </div>
+            <div class="mobile-col" style="width: 33.333333%">
+                <a class="btn-rectangle-sm" ng-click="close(1)">关</a>
+            </div>
+            <div class="mobile-col" style="width: 33.333333%">
+                <a class="btn-rectangle-sm" ng-click="stop(1)">停</a>
+            </div>
+        </div>
+    </div>
+    <div style="position: relative; height: 50%">
+        <div class="mobile-center" style="padding: 10px">
+            <a class="btn-ellipse-sm">窗帘二</a>
+        </div>
+        <div class="text-center" style="margin-bottom: 10px">
+            <img src="/mobile/images/curtauns-close.png" width="160px" />
+        </div>
+        <div>
+            <div class="mobile-col" style="width: 33.333333%">
+                <a class="btn-rectangle-sm" ng-click="open(2)">开</a>
+            </div>
+            <div class="mobile-col" style="width: 33.333333%">
+                <a class="btn-rectangle-sm" ng-click="close(2)">关</a>
+            </div>
+            <div class="mobile-col" style="width: 33.333333%">
+                <a class="btn-rectangle-sm" ng-click="stop(2)">停</a>
+            </div>
+        </div>
+    </div>
+</div>

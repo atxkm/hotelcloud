@@ -1,0 +1,46 @@
+<div ng-controller="modules.room.controllers.rooms as roomController">
+    <div class="navbar navbar-default navbar-static-top" style="margin: 0">
+        <div class="navbar-left">
+            <ul class="nav navbar-nav" role="tablist">
+                <li role="presentation" class="active"><a href="#rcu_project" aria-controls="rcu_project" role="tab" data-toggle="tab"><strong>工程设置</strong></a></li>
+                <li role="presentation"><a href="#rcu_param" aria-controls="rcu_param" role="tab" data-toggle="tab"><strong>参数设置</strong></a></li>
+                <li role="presentation"><a href="#rcu_time" aria-controls="rcu_time" role="tab" data-toggle="tab"><strong>时间设置</strong></a></li>
+            </ul>
+        </div>
+        <div class="navbar-form navbar-right">
+            <div class="container-fluid">
+                <button class="btn btn-default" ng-click="roomController.reset()">复位升级</button>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body row">
+        <div class="col-md-2" ng-controller="modules.room.controllers.build as me">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default" ng-repeat="build in $globalStore.builds">
+                    <div class="panel-heading" role="tab">
+                        <span class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" ng-href="{{'#build_' + build.Id}}" aria-expanded="true">{{build.BuildName}}</a>
+                    </span>
+                    </div>
+                    <div id="{{'build_' + build.Id}}" class="panel-collapse collapse" ng-class="{'in':$index===0}" role="tabpanel">
+                        <div class="panel-body" ng-controller="modules.room.controllers.buildForm as ctl">
+                            <div class="container-fluid row">
+                                <button type="button" class="btn btn-success col-md-2" ng-class="{'active':current.BuildId===build.Id && current.Floor===num}"
+                                    ng-repeat="num in ctl.floors(build.Floors)" ng-click="roomController.select(build,num)">{{num}}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="rcu_project" ng-include="'views/room/rcu/Project.html'">
+                </div>
+                <div role="tabpanel" class="tab-pane" id="rcu_param" ng-include="'views/room/rcu/Parameters.html'">
+                </div>
+                <div role="tabpanel" class="tab-pane" id="rcu_time" ng-include="'views/room/rcu/TimeSettings.html'"></div>
+            </div>
+        </div>
+    </div>
+</div>

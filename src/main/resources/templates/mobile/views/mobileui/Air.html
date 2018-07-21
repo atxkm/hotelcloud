@@ -1,0 +1,64 @@
+<div class="layout" ng-controller="modules.mobileui.controllers.air as me">
+    <div class="air-top">
+        <div class="btn-circle" ng-class="{ 'btn-red': me.airStatus, 'btn-silver': !me.airStatus }" ng-click="me.switchAir()">
+            <i class="fa fa-power-off" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="air-middle">
+        <div class="air-number">
+            <div class="air-number-bg">
+                <span style="float:right; font-size: xx-large">
+                    <strong>℃</strong>
+                </span>
+                <select data-role="none">
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                </select>
+            </div>
+        </div>
+        <div class="mobile-center">
+            <div style="float: left; width: 33.33%">
+                <div class="btn-ellipse" style="font-size: larger" ng-click="me.ctrlAir(83, 1);me.type = 1;" ng-class="{ 'active': me.type == 1 }">制 冷</div>
+            </div>
+            <div style="float: left; width: 33.33%">
+                <div class="btn-ellipse" style="font-size: larger" ng-click="me.ctrlAir(83, 2);me.type = 2;" ng-class="{ 'active': me.type == 2 }">纯 风</div>
+            </div>
+            <div style="float: right; width: 33.33%">
+                <div class="btn-ellipse" style="font-size: larger" ng-click="me.ctrlAir(83, 0);me.type = 0;" ng-class="{ 'active': me.type == 0 }">制 热</div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid air-bottom">
+        <div class="mobile-row-flex">
+            <div class="mobile-col" style="width: 33.333333%">
+                <div class="btn-rectangle-sm" ng-click="me.ctrlAir(91, 1);me.speed = 91;" ng-class="{ 'active': me.speed == 91 }">高 风</div>
+            </div>
+            <div class="mobile-col" style="width: 33.333333%">
+                <div class="btn-rectangle-sm" ng-click="me.ctrlAir(92, 1);me.speed = 92;" ng-class="{ 'active': me.speed == 92 }">中 风</div>
+            </div>
+            <div class="mobile-col" style="width: 33.333333%">
+                <div class="btn-rectangle-sm" ng-click="me.ctrlAir(93, 1);me.speed = 93;" ng-class="{ 'active': me.speed == 93 }">低 风</div>
+            </div>
+        </div>
+        <div class="mobile-row-flex">
+            <div class="mobile-col" style="width: 50%">
+                <div class="btn-rectangle-sm" ng-class="{ 'active': me.u2dStatus }" ng-click="me.u2d()">上下扫风</div>
+            </div>
+            <div class="mobile-col" style="width: 50%">
+                <div class="btn-rectangle-sm" ng-class="{ 'active': me.l2rStatus }" ng-click="me.l2r()">左右扫风</div>
+            </div>
+        </div>
+    </div>
+</div>

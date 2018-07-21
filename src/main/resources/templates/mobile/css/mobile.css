@@ -1,0 +1,487 @@
+.layout {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.loginbg {
+    background-image: url('../images/login-bg.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.layout .loginwindow {
+    margin: 0 auto 0 auto;
+    width: 80%;
+    top: 10%;
+}
+
+.mobile-title {
+    position: absolute;
+    left: 57px;
+    right: 57px;
+}
+
+.mobile-navbar {
+    background-image: url('../images/navbar.png');
+    background-repeat: repeat-x;
+    height: 47px;
+}
+
+.mobile-bottom {
+    background-image: url('../images/navbar-black.png');
+    background-repeat: repeat-x;
+    height: 44px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.mobile-bottom-nav {
+    float: left;
+    padding: 12px 0;
+}
+
+.mobile-bottom-btn {
+    float: left;
+}
+
+.mobile-bottom-nav a {
+    color: white;
+    font-size: medium;
+}
+
+.mobile-content {
+    /* background-color: #f2f2f2; */
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#fefefe), to(#f2f2f2));
+    position: absolute;
+    top: 47px;
+    bottom: 44px;
+    left: 0;
+    right: 0;
+}
+
+.mobile-row {
+    margin-bottom: 15px;
+}
+
+.mobile-row-flex {
+    margin-bottom: 15px;
+    display: flex;
+}
+
+.mobilenav-btn {
+    padding: 4px 10px
+}
+
+.index-tmpbg {
+    background-image: url('../images/椭圆 1 副本 2.png');
+    background-position-x: center;
+    background-repeat: no-repeat;
+    height: 118px;
+    padding-top: 30px;
+}
+
+.index-content {
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#fefefe), to(#f2f2f2));
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.index-temperature {
+    font-size: 30pt;
+    color: #298fed;
+}
+
+.index-value {
+    font-size: x-large;
+    margin-left: 5px;
+}
+
+.index-up {
+    position: relative;
+    height: 30%;
+    vertical-align: middle;
+}
+
+.index-up p {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.index-middle {
+    position: relative;
+    height: 30%
+}
+
+.index-bottom {
+    position: relative;
+    height: 40%
+}
+
+.mobile-btn-blue {
+    background-image: url('../images/btn-blue.png');
+    width: 222px;
+    height: 45px;
+    border: none;
+    color: white;
+}
+
+.hotel-logo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 220px;
+    background-image: url('../images/background.jpg');
+    background-size: 100%;
+}
+
+.hotel-logo .hotel-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 0;
+}
+
+.hotel-title div {
+    color: white;
+    display: block;
+}
+
+.hotel-content {
+    position: absolute;
+    padding: 25px;
+    top: 221px;
+    left: 0;
+    right: 0;
+    bottom: 51px;
+}
+
+.btn-circle {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 14pt;
+    padding-top: 1px;
+    width: 39px;
+    height: 39px;
+}
+
+.btn-red {
+    background-image: url('../images/btn-cirle-orange.png');
+    color: white;
+}
+
+.btn-silver {
+    background-image: url('../images/btn-cirle.png');
+    color: #908f8f;
+}
+
+.btn-rectangle-sm {
+    background-image: url('../images/btn-rectangle.png');
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color: #908f8f;
+    font-weight: bold;
+    font-size: medium;
+    width: 85px;
+    height: 35px;
+}
+
+.btn-ellipse {
+    background-image: url('../images/btn-elipse-lg.png');
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color: #908f8f;
+    font-weight: bold;
+    width: 107px;
+    height: 42px;
+}
+
+.btn-ellipse-sm {
+    background-image: url('../images/btn-elipse.png');
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color: #908f8f;
+    font-weight: bold;
+    width: 79px;
+    height: 29px;
+}
+
+.btn-ellipse-orange {
+    background-image: url('../images/btn-orange.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    font-weight: bold;
+    width: 107px;
+    height: 42px;
+}
+
+.mobile-col {
+    float: left;
+    text-align: center;
+    text-align: -webkit-center;
+}
+
+.air-top {
+    position: relative;
+    text-align: right;
+    text-align: -webkit-right;
+    vertical-align: middle;
+    height: 16%;
+    padding: 30px;
+}
+
+.air-middle {
+    position: relative;
+    height: 60%;
+}
+
+.air-bottom {
+    position: relative;
+    height: 25%;
+}
+
+.tv-top {
+    position: relative;
+    vertical-align: middle;
+    height: 14%;
+    padding: 15px;
+}
+
+.tv-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.mobile-right {
+    text-align: right;
+    text-align: -webkit-right;
+}
+
+.mobile-center {
+    text-align: center;
+    text-align: -webkit-center;
+}
+
+.tv-verticalbtn {
+    background-image: url('../images/btn-vertical.png');
+    width: 48px;
+    height: 120px;
+    color: #908f8f;
+}
+
+.tv-verticalbtn a {
+    color: #908f8f;
+}
+
+.tv-verticalbtn div {
+    position: relative;
+    height: 33.3333333%;
+    vertical-align: middle;
+    padding-top: 10px;
+}
+
+.tv-control {
+    background-image: url('../images/btn-tv.png');
+    width: 137px;
+    height: 137px;
+    color: #908f8f;
+}
+
+.tv-control a {
+    color: #908f8f;
+}
+
+.control-row {
+    position: relative;
+    height: 33.3333333%;
+    vertical-align: middle;
+    padding-top: 13px;
+}
+
+.control-row-col {
+    float: left;
+    width: 33.3333333%;
+    text-align: center;
+}
+
+.light-sp {
+    background-image: url('../images/bar-light.png');
+    background-repeat: repeat-x;
+    line-height: 59px;
+    vertical-align: middle;
+    height: 59px;
+    color: #908f8f;
+}
+
+.light-col {
+    float: left;
+    width: 33.333333%;
+    text-align: center;
+    text-align: -webkit-center;
+}
+
+.light-panel {
+    width: 105px;
+}
+
+.light-panel .light-title {
+    background-image: url('../images/light-title.png');
+    background-repeat: no-repeat;
+    color: white;
+    line-height: 23px;
+    vertical-align: middle;
+    text-align: center;
+    height: 23px;
+}
+
+.light-panel .light-control {
+    height: 23px;
+    line-height: 23px;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+.light-panel .light-bar {
+    height: 35px;
+    line-height: 35px;
+    background-color: #f1f1f1;
+}
+
+.light-panel .light-btn {
+    background-color: #dbdbdb;
+    display: table-cell;
+    text-align: center;
+    width: 30px
+}
+
+.light-control span {
+    color: #908f8f;
+}
+
+.light-panel .light-btn-lg {
+    background-color: #dbdbdb;
+    display: table-cell;
+    text-align: center;
+    width: 26px;
+}
+
+.light-bar span {
+    color: #908f8f;
+}
+
+.air-number {
+    text-align: center;
+    text-align: -webkit-center;
+}
+
+.air-number .air-number-bg {
+    background-image: url('../images/air-number.png');
+    width: 206px;
+    height: 209px;
+}
+
+.air-number input {
+    display: none;
+}
+
+.air-number .dwi {
+    margin: 0;
+    position: inherit;
+}
+
+.air-number .dwbg {
+    background-color: transparent;
+}
+
+.air-number .android-ics .dw {
+    background-color: transparent;
+}
+
+.air-number .android-ics.light .dw {
+    background-color: transparent;
+}
+
+.air-number .android-ics .dwhl {
+    margin: 0;
+    padding: 0;
+}
+
+.air-number .android-ics .dwc {
+    margin: 0;
+    padding: 0;
+}
+
+.air-number .dwhl {
+    padding: 0;
+}
+
+.air-number .dwwc {
+    margin: 0;
+    padding: 0;
+}
+
+.air-number .android-ics.light .dwwo {
+    background-color: transparent;
+    background-image: none;
+}
+
+.air-number .dwwr {
+    text-align: center;
+}
+
+.air-number .dw {
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.dwc {
+    width: 206px;
+    text-align: center;
+    text-align: -webkit-center;
+}
+
+.light-panel .rzslider .rz-pointer {
+    width: 16px;
+    height: 16px;
+    top: -6px;
+}
+
+.light-panel .rzslider .rz-pointer:after {
+    top: 4px;
+    left: 4px;
+}
+
+.light-panel .rzslider {
+    margin: 0;
+}
+
+.light-panel .slider {
+    padding-left: 30px;
+    padding-right: 4px;
+}
+
+.active {
+    color: #337ab7;
+}

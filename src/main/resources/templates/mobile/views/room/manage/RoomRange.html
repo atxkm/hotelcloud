@@ -1,0 +1,86 @@
+<div ng-controller="modules.room.controllers.roomRange as ctl">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$dismiss()">
+            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+        </button>
+        <h3 class="modal-title">批量添加</h3>
+    </div>
+    <div class="modal-body">
+        <form name="form" role="form" class="row">
+            <div class="form-group col-md-6" ng-class="{'has-error':form.NumberStart.$invalid}">
+                <div>
+                    <label>房号起始</label>
+                    <span class="text-danger pull-right" ng-show="form.NumberStart.$invalid">*输入不正确</span>
+                </div>
+                <div>
+                    <input class="form-control" type="number" name="NumberStart" ng-model="$data.NumberStart" placeholder="输入数字" min="1" max="{{$data.NumberEnd-1}}"
+                        required/>
+                </div>
+            </div>
+            <div class="form-group col-md-6" ng-class="{'has-error':form.NumberEnd.$invalid}">
+                <div>
+                    <label>房号结束</label>
+                    <span class="text-danger pull-right" ng-show="form.NumberEnd.$invalid">*输入不正确</span>
+                </div>
+                <div>
+                    <input class="form-control" type="number" name="NumberEnd" ng-model="$data.NumberEnd" placeholder="输入数字" min="{{$data.NumberStart+1}}"
+                        required/>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <div>
+                    <label>Ip起始</label>
+                    <!-- <span class="text-danger pull-right" ng-show="form.NumberStart.$invalid">*输入不正确</span> -->
+                </div>
+                <div>
+                    <div style="float: left; width: 25%" ng-class="{'has-error':form.Ip1.$invalid}">
+                        <input class="form-control" type="number" name="Ip1" ng-model="$data.Ip1" placeholder="数字" min="0" max="255" required/>
+                    </div>
+                    <div style="float: left; width: 25%" ng-class="{'has-error':form.Ip2.$invalid}">
+                        <input class="form-control" type="number" name="Ip2" ng-model="$data.Ip2" placeholder="数字" min="0" max="255" required/>
+                    </div>
+                    <div style="float: left; width: 25%" ng-class="{'has-error':form.Ip3.$invalid}">
+                        <input class="form-control" type="number" name="Ip3" ng-model="$data.Ip3" placeholder="数字" min="0" max="255" required/>
+                    </div>
+                    <div style="float: left; width: 25%" ng-class="{'has-error':form.Ip4s.$invalid}">
+                        <input class="form-control" type="number" name="Ip4s" ng-model="$data.Ip4s" placeholder="数字" min="0" max="255" required/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <div>
+                    <label>Ip结束</label>
+                    <!-- <span class="text-danger pull-right" ng-show="form.NumberStart.$invalid">*输入不正确</span> -->
+                </div>
+                <div class="row">
+                    <div class="form-control-static col-md-3">
+                        {{$data.Ip1}} .
+                    </div>
+                    <div class="form-control-static col-md-3">
+                        {{$data.Ip2}} .
+                    </div>
+                    <div class="form-control-static col-md-3">
+                        {{$data.Ip3}} .
+                    </div>
+                    <div class="form-control-static col-md-3" ng-class="{'text-danger':$data.Ip4e>255}">
+                        {{$data.Ip4e}}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <div>
+                    <label>房间</label>
+                </div>
+                <div class="container-fluid row">
+                    <button type="button" class="btn col-md-1" ng-class="{'btn-default':ctl.ignores.indexOf(num)>=0, 'btn-success':ctl.ignores.indexOf(num)<0}"
+                        ng-click="ctl.ignore(num)" ng-repeat="num in ctl.rooms($data.NumberStart,$data.NumberEnd)">{{num}}</button>
+                </div>
+            </div>
+            <input style="visibility: collapse" type="number" name="Ip4e" ng-model="$data.Ip4e" max="255" />
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="$close(data)" ng-disabled="form.$invalid"><i class="glyphicon glyphicon-ok-sign"></i> 确定</button>
+        <button class="btn btn-default" ng-click="$dismiss()"><i class="glyphicon glyphicon-remove-sign"></i> 取消</button>
+    </div>
+</div>

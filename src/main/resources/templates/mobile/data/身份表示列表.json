@@ -1,0 +1,36 @@
+{
+    "Data": {
+        "Data": [{
+            "Id": 1,
+            "CardTypeCode": 1,
+            "CardTypeName": "超级管理员",
+            "Image": "",
+            "Description": ""
+        }, {
+            "Id": 2,
+            "CardTypeCode": 2,
+            "CardTypeName": "超级管理员",
+            "Image": "",
+            "Description": ""
+        }, {
+            "Id": 3,
+            "CardTypeCode": 3,
+            "CardTypeName": "超级管理员",
+            "Image": "",
+            "Description": ""
+        }, {
+            "Id": 4,
+            "CardTypeCode": 4,
+            "CardTypeName": "超级管理员",
+            "Image": "",
+            "Description": ""
+        }, {
+            "Id": 5,
+            "CardTypeCode": 5,
+            "CardTypeName": "超级管理员",
+            "Image": "",
+            "Description": ""
+        }]
+    },
+    "Success": true
+}

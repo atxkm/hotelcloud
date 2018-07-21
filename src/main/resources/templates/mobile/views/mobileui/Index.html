@@ -1,0 +1,49 @@
+<div class="layout" ng-controller="modules.mobileui.controllers.index as me">
+    <!-- <div class="mobile-navbar">
+        <div class="navbar-header pull-left mobilenav-btn" ng-show="$state.$current.data.back&&$state.$current.data.back!==''">
+            <a ng-click="$state.go($state.$current.data.back)"><img src="../images/btn-back.png"/></a>
+        </div>
+        <div class="mobile-title">
+            <h4 class="navbar-text text-center"><strong mobile-title></strong></h4>
+        </div>
+    </div> -->
+    <div class="index-content">
+        <div class="index-up text-center">
+            <h1 style="color: #298fed"><strong>2046</strong></h1>
+            <p class="text-center">
+                欢迎光临本酒店
+            </p>
+            <p class="text-center">
+                我们会竭诚为您服务
+            </p>
+            <p class="text-center">
+                愿您度过一段美好时光
+            </p>
+        </div>
+        <div class="index-middle">
+            <div class="text-center index-tmpbg">
+                <div class="index-temperature"><span><strong>25℃</strong></span></div>
+                <div><span style="color: #298fed">室内温度</span></div>
+            </div>
+            <div class="container-fluid" style="color: #298fed">
+                <div class="col-xs-6 text-center">
+                    <span>空气质量指数</span><span class="index-value"><strong>45</strong></span>
+                </div>
+                <div class="col-xs-6 text-center">
+                    <span>室内环境湿度</span><span class="index-value"><strong>40%</strong></span>
+                </div>
+            </div>
+        </div>
+        <div class="index-bottom">
+            <div class="mobile-row text-center">
+                <button class="mobile-btn-blue" ng-click="me.openTheDoor()"><strong>打 开 门 锁</strong></button>
+            </div>
+            <div class="mobile-row text-center">
+                <button class="mobile-btn-blue" ng-click="$state.go('hotel')"><strong>进 入 房 间</strong></button>
+            </div>
+            <div class="mobile-row text-center">
+                <button class="mobile-btn-blue" ng-click="me.exit()"><strong>退 房</strong></button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<div class="loginbg">
+    <div style="width: 900px; margin: 100px auto;" ng-controller="modules.manageui.controllers.login as me">
+        <div class="panel-body container-fluid">
+            <div class="col-md-7">
+                <div class="panel-body">
+                    <h2>欢迎使用</h2>
+                    <h1>佳智星客房控制系统</h1>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <p>还没有账号？
+                        <a ng-href="#/register">立即注册</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <br/>
+                            <div class="panel-body text-center">
+                                <img width="120px" src="./images/logo.png" />
+                            </div>
+                            <form class="container-fluid" name="form" role="form">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-user"></span>
+                                        </div>
+                                        <input type="text" class="form-control" name="Username" ng-model="me.Username" placeholder="账号" required />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-lock"></span>
+                                        </div>
+                                        <input type="password" class="form-control" name="Password" ng-model="me.Password" placeholder="密码" required />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <a ng-href="#/forgot">忘记密码？</a>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-primary col-md-12" ng-disabled="form.$invalid" ng-click="me.login()">登录</button>
+                                </div>
+                            </form>
+                            <br/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="col-md-6">
+                <p>
+                    2017 版本号 1.0.0</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+<div ng-controller="modules.manageui.controllers.main as me">
+    <div class="manage-nav manage-nav-normal" ng-show="!me.menuCollapse">
+        <div class="panel-body nav-header">
+            <!-- <div class="pull-left">
+                <a href="" ng-click="me.editPicture()"><img class="img-circle" src="./images/profile_small.jpg" width="64px" height="64px" /></a>
+            </div>
+            <div class="container-fluid manage-info">
+                <div class="form-group text-left">
+                    <div>
+                        <a href="" ng-click="me.showUser()"><strong>{{$appEnvironment.user.Username}}</strong></a>
+                    </div>
+                    <div class="dropdown" style="z-index: 9999">
+                        <a href="" class="text-muted dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{$appEnvironment.user.Rolename}} <i class="caret"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="" ng-click="me.showUser()">个人资料</a></li>
+                            <li><a href="" ng-click="me.editPicture()">修改头像</a></li>
+                            <li><a ng-href="#/lock">锁定</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="" ng-click="me.logout()">退出</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <ul sys-links="me.links" class="metismenu nav"></ul>
+    </div>
+    <div class="manage-nav-min" ng-show="me.menuCollapse">
+        <ul class="nav">
+            <li class="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-caret-right fa-1x flag" aria-hidden="true"></i><i class="fa fa-user fa-fw fa-2x" aria-hidden="true"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="" ng-click="me.showUser()">个人资料</a></li>
+                    <li><a href="" ng-click="me.editPicture()">修改头像</a></li>
+                    <li><a ng-href="#/lock">锁定</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="" ng-click="me.logout()">退出</a></li>
+                </ul>
+            </li>
+            <li ng-repeat="link in me.links" class="dropdown">
+                <a ng-if="!link.templateUrl&&!link.src" href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i ng-if="link.links.length>0" class="fa fa-caret-right fa-1x flag" aria-hidden="true"></i><i class="{{link.icon}} fa-2x"></i></a>
+                <a ng-if="link.templateUrl||link.src" href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+                    ng-click="me.tabService.open(link)"><i ng-if="link.links.length>0" class="fa fa-caret-right fa-1x flag" aria-hidden="true"></i><i class="{{link.icon}} fa-2x"></i></a>
+                <ul class="dropdown-menu" ng-if="link.links.length>0">
+                    <li ng-repeat="sub in link.links"><a href="" ng-click="me.tabService.open(sub)">{{sub.text}}</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="manage-content" ng-class="{'manage-content-normal': !me.menuCollapse, 'manage-content-min': me.menuCollapse}">
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="navbar-form navbar-left">
+                <button class="btn btn-success" ng-click="me.menuCollapse=me.menuCollapse?false:true"><i class="fa fa-bars fa-fw"></i></button>
+                <div class="input-group dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-paint-brush fa-fw" aria-hidden="true"></i> <span class="caret"></span></button>
+                    <ul class="dropdown-menu" style="z-index: 9999">
+                        <li ng-repeat="th in me.themes" ng-class="{'active':$appEnvironment.theme===th.value}"><a href="" ng-click="me.changeTheme(th.value)">{{th.name}}</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="navbar-right" ui-view="bar"></div>
+        </div>
+        <div class="manage-tab">
+            <div class="tab">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="ui-state-disabled"><a href=""><i class="glyphicon glyphicon-th-list"></i></a></li>
+                    <li role="presentation" head="true" class="ui-state-disabled active">
+                        <a href="#" data-target="#tab_home" data-toggle="tab"><i class="glyphicon glyphicon-home"></i> 首页</a>
+                    </li>
+                    <li role="presentation" tail="true" class="pull-right tail ui-state-disabled">
+                        <a href="" ng-click="me.logout()"><i class="glyphicon glyphicon-log-out"></i> 退出</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content manage-tab-content">
+                <div role="tabpanel" class="tab-pane manage-tab-pane active" id="tab_home">
+                    <div ui-view="home" style="background-color: #f5f5f5"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

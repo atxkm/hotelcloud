@@ -1,0 +1,9 @@
+{
+    "Data": {
+        "Id": 1,
+        "BuildName": "aaa",
+        "Floors": 15,
+        "BaseFloors": 1
+    },
+    "Success": true
+}

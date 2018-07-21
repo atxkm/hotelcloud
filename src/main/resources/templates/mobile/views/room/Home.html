@@ -1,0 +1,196 @@
+<div class="panel-body row" ng-controller="modules.room.controllers.home as me">
+    <div class="col-md-6 widget-column">
+        <div class="list-group" style="border: none">
+            <div class="list-group-item panel-heading">
+                <div class="form-inline text-right">
+                    <label class="pull-left"><i class="fa fa-bell fa-fw"></i> 呼叫</label>
+                    <a href="" class="badge badge-warning" ng-click="me.openMessage('call')"><span>1</span> 条标记</a>
+                    <a href="" class="badge badge-danger" ng-click="me.openMessage('call')"><span>1</span> 条未读</a>
+                </div>
+            </div>
+            <div class="list-group-item">
+                <div class="bs-callout bs-callout-warning">
+                    <label>sssss</label>
+                    <div>
+                        <span class="text-muted"><i class="glyphicon glyphicon-time"></i> 2017-4-4</span>
+                        <div class="pull-right">
+                            <button class="btn btn-default btn-xs">标记</button>
+                            <button class="btn btn-default btn-xs">受理</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bs-callout bs-callout-warning">
+                    <label>sssss</label>
+                    <div>
+                        <span class="text-muted"><i class="glyphicon glyphicon-time"></i> 2017-4-4</span>
+                        <div class="pull-right">
+                            <button class="btn btn-default btn-xs">标记</button>
+                            <button class="btn btn-default btn-xs">受理</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bs-callout bs-callout-warning">
+                    <label>sssss</label>
+                    <div>
+                        <span class="text-muted"><i class="glyphicon glyphicon-time"></i> 2017-4-4</span>
+                        <div class="pull-right">
+                            <button class="btn btn-default btn-xs">标记</button>
+                            <button class="btn btn-default btn-xs">受理</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="list-group" style="border: none">
+            <div class="list-group-item panel-heading">
+                <div class="form-inline text-right">
+                    <label class="pull-left"><i class="fa fa-cloud" aria-hidden="true"></i> 天气预报</label>
+                    <a href="" class="badge">更多</a>
+                </div>
+            </div>
+            <div class="list-group-item">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="text-center">
+                            <h4><label>今日</label></h4>
+                        </div>
+                        <div class="text-center">
+                            <div>
+                                <label>25 ℃</label>
+                            </div>
+                            <div>
+                                <img src="../images/weather/Cloud.svg" />
+                            </div>
+                            <div>
+                                <label>多云</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-center">
+                            <h4><label>明日</label></h4>
+                        </div>
+                        <div class="text-center">
+                            <div>
+                                <label>28 ℃</label>
+                            </div>
+                            <div>
+                                <img src="../images/weather/Sun.svg" />
+                            </div>
+                            <div>
+                                <label>晴</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="list-group" style="border: none">
+            <div class="list-group-item panel-heading">
+                <div class="form-inline text-right">
+                    <label class="pull-left"><i class="fa fa-envelope fa-fw"></i> 信息</label>
+                    <a href="" class="badge badge-warning" ng-click="me.openMessage('message')"><span>1</span> 条标记</a>
+                    <a href="" class="badge badge-danger" ng-click="me.openMessage('message')"><span>1</span> 条未读</a>
+                </div>
+            </div>
+            <a href="" class="list-group-item widget-list-item">
+                <p><label class="text-info">发件人：</label> 内容</p>
+                <div>
+                    <span class="text-muted"><i class="glyphicon glyphicon-time"></i> 2017-4-4</span>
+                    <div class="pull-right">
+                        <button class="btn btn-default btn-xs">标记</button>
+                        <button class="btn btn-default btn-xs">已读</button>
+                    </div>
+                </div>
+            </a>
+            <a href="" class="list-group-item widget-list-item">
+                <p><label class="text-info">发件人：</label> 内容</p>
+                <div>
+                    <span class="text-muted"><i class="glyphicon glyphicon-time"></i> 2017-4-4</span>
+                    <div class="pull-right">
+                        <button class="btn btn-default btn-xs">标记</button>
+                        <button class="btn btn-default btn-xs">已读</button>
+                    </div>
+                </div>
+            </a>
+            <a href="" class="list-group-item widget-list-item">
+                <p><label class="text-info">发件人：</label> 内容</p>
+                <div>
+                    <span class="text-muted"><i class="glyphicon glyphicon-time"></i> 2017-4-4</span>
+                    <div class="pull-right">
+                        <button class="btn btn-default btn-xs">标记</button>
+                        <button class="btn btn-default btn-xs">已读</button>
+                    </div>
+                </div>
+            </a>
+        </div> -->
+    </div>
+    <div class="col-md-6 widget-column">
+        <!-- <div class="list-group" style="border: none">
+            <div class="list-group-item panel-heading">
+                <div class="form-inline text-right">
+                    <label class="pull-left"><i class="fa fa-bed fa-fw"></i> 登记</label>
+                    <a href="" class="badge badge-warning" ng-click="me.openMessage('checkIn')"><span>1</span> 条标记</a>
+                    <a href="" class="badge badge-danger" ng-click="me.openMessage('checkIn')"><span>1</span> 条未读</a>
+                </div>
+            </div>
+            <div class="list-group-item">
+                <div class="bs-callout bs-callout-success">
+                    <label>sssss</label>
+                    <div>
+                        <span class="text-muted"><i class="glyphicon glyphicon-time"></i> 2017-4-4</span>
+                        <div class="pull-right">
+                            <button class="btn btn-default btn-xs">标记</button>
+                            <button class="btn btn-default btn-xs">确认</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bs-callout bs-callout-success">
+                    <label>sssss</label>
+                    <div>
+                        <span class="text-muted"><i class="glyphicon glyphicon-time"></i> 2017-4-4</span>
+                        <div class="pull-right">
+                            <button class="btn btn-default btn-xs">标记</button>
+                            <button class="btn btn-default btn-xs">确认</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="list-group" style="border: none">
+            <div class="list-group-item panel-heading">
+                <div class="form-inline text-right">
+                    <label class="pull-left"><i class="fa fa-bed fa-fw"></i> 房态</label>
+                    <a href="" class="badge badge-warning" ng-click="me.openMessage('room')"><span>1</span> 条标记</a>
+                    <a href="" class="badge badge-danger" ng-click="me.openMessage('room')"><span>1</span> 条未读</a>
+                </div>
+            </div>
+            <div class="list-group-item">
+                <div class="bs-callout bs-callout-primary">
+                    <label>sssss</label>
+                    <div>
+                        <span class="text-muted"><i class="glyphicon glyphicon-time"></i> 2017-4-4</span>
+                        <div class="pull-right">
+                            <button class="btn btn-default btn-xs">标记</button>
+                            <button class="btn btn-default btn-xs">确认</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bs-callout bs-callout-primary">
+                    <label>sssss</label>
+                    <div>
+                        <span class="text-muted"><i class="glyphicon glyphicon-time"></i> 2017-4-4</span>
+                        <div class="pull-right">
+                            <button class="btn btn-default btn-xs">标记</button>
+                            <button class="btn btn-default btn-xs">确认</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- <div class="col-md-4 widget-column">
+        
+    </div> -->
+</div>

@@ -1,0 +1,46 @@
+<div ng-controller="checkout as ctl">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$dismiss()">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+        </button>
+        <h3 class="modal-title">
+            <strong>退房</strong>
+        </h3>
+    </div>
+    <div class="modal-body">
+        <form name="form" role="form" class="row">
+            <div class="form-group col-md-12" ng-class="{'has-error':form.BuildName.$invalid}">
+                <div>
+                    <label>房间号</label>
+                    <span class="text-danger pull-right" ng-show="form.BuildName.$invalid">*房间号不能为空</span>
+                </div>
+                <div>
+                    <input class="form-control" name="BuildName" ng-model="$data.BuildName" placeholder="输入名称" required/>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" ng-click="doCheckOut()" ng-disabled="form.$invalid">
+            <i class="glyphicon glyphicon-ok-sign"></i> 确定</button>
+        <button type="button" class="btn btn-default" ng-click="$dismiss()">
+            <i class="glyphicon glyphicon-remove-sign"></i> 取消</button>
+    </div>
+</div>
+<script>
+    require('modules/room/module')
+        .controller('checkout', [
+            '$scope',
+            'app.services.popupService',
+            function ($scope, popupService) {
+                $scope.doCheckOut = function () {
+                    popupService
+                        .confirm('是否退房？')
+                        .ok(function () {
+                            $scope.$close($scope.$data);
+                        });
+                };
+            }
+        ]);
+</script>

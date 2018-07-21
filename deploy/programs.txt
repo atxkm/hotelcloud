@@ -1,0 +1,5 @@
+-X clean package -Dmaven.test.skip=true
+-X clean package -Dmaven.test.skip=true -Pdev
+-X clean package -Dmaven.test.skip=true -Pprod
+
+--server.port=80 --zhsit.file.store=E:/test

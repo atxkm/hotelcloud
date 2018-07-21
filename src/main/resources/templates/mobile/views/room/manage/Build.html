@@ -1,0 +1,28 @@
+<div ng-controller="modules.room.controllers.build as me">
+    <div class="navbar navbar-default navbar-static-top" style="margin: 0">
+        <div class="navbar-form pull-right">
+            <button class="btn btn-default" ng-click="me.add()"><i class="glyphicon glyphicon-plus-sign"></i> 添加</button>
+        </div>
+    </div>
+    <table ng-table="me.tableParams" class="table table-striped table-hover">
+        <colgroup>
+            <col width="100px" />
+            <col />
+            <col />
+            <col />
+            <col width="64px" />
+        </colgroup>
+        <tr ng-repeat="row in $globalStore.builds">
+            <td title="'序号'">{{row.Id}}</td>
+            <td title="'楼栋名称'">{{row.BuildName}}</td>
+            <td title="'楼层数'">{{row.Floors}}</td>
+            <td title="'地下室层数'">{{row.BaseFloors}}</td>
+            <td title="'操作'">
+                <div class="btn-group btn-group-xs">
+                    <button class="btn btn-default" ng-click="me.edit(row.Id)"><i class="glyphicon glyphicon-pencil"></i></button>
+                    <button class="btn btn-danger" ng-click="me.drop(row.Id)"><i class="glyphicon glyphicon-trash"></i></button>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,11 @@
+<li>
+    <a ng-if="!sysLinkSection.templateUrl&&!sysLinkSection.src" href="">
+        <i class="{{sysLinkSection.icon}}"></i> <span>{{sysLinkSection.text}}</span>
+        <i ng-if="sysLinkSection.links.length>0" class="fa fa-caret-left arrow" aria-hidden="true"></i></a>
+    <a ng-if="sysLinkSection.templateUrl||sysLinkSection.src" href="" ng-click="openLink(sysLinkSection)">
+        <i class="{{sysLinkSection.icon}}"></i> <span>{{sysLinkSection.text}}</span>
+    </a>
+    <ul class="nav nav-second-level" aria-expanded="false" ng-if="sysLinkSection.links.length">
+        <li sys-link-item="linkItem" ng-repeat="linkItem in sysLinkSection.links track by $index" ng-repeated></li>
+    </ul>
+</li>

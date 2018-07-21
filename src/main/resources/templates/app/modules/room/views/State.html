@@ -1,0 +1,75 @@
+<div ng-controller="modules.room.controllers.state as me">
+    <div class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse">
+                <form class="navbar-form navbar-left" style="padding-left: 0">
+                    <button class="btn btn-default" class="me.load()">
+                        <i class="glyphicon glyphicon-refresh"></i>
+                    </button>
+                    <select class="form-control" ng-init="me.load()" ng-model="current" ng-options="build.buildingName for build in $globalStore.builds"></select>
+                </form>
+                <div class="navbar-form navbar-left" style="padding-left: 0" ng-controller="modules.room.controllers.buildForm as ctl">
+                    <div class="btn-group">
+                        <button class="btn btn-success" ng-class="{'active':selectedFloors.indexOf(num)>=0}" ng-click="me.selectFloor(num)" style="width: 42px"
+                            ng-repeat="num in ctl.floors(current.floor)">{{num}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid roomstate panel-body" style="padding: 15px; overflow: auto; position: absolute; top: 50px; bottom: 0">
+        <div class="state-container" style="width: 12.5%; float: left;" ng-repeat="room in $controller.rooms">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    {{room.temperature}} ℃
+                    <button class="close" ng-click="me.showComment(room.roomId)">
+                        <i class="fa fa-comment" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="panel-collapse text-center roomnum">
+                    <strong>
+                        <a href="" ng-click="me.openControl(room.roomId)">{{room.roomNum}}</a>
+                    </strong>
+                </div>
+                <div class="panel-body row state">
+                    <div class="col-sm-4">
+                        <!--开门关门状态-->
+                        <div class="statebg">
+                            <img ng-src="{{room.fangMenZhuangTai==='Close'?'DoorOpen.png':'DoorClose.png' | imagePath}}" />
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <!--开门的人员类别-->
+                        <div class="statebg">
+                            <img ng-src="{{room.headPicUrl}}" />
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <!--服务请求类型-->
+                        <div class="statebg">
+                            <img ng-src="{{me.getServicePic(room.huJiaoFuWu) | imagePath}}" />
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <!--房间状态，包括待租，租用，修理-->
+                        <div class="statebg">
+                            <img ng-src="{{me.getRoomStatus(room.fangTai) | imagePath}}" />
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <!--告警和警告信息,标志地址定义的告警和警告内容，紧急呼叫 消防告警 温度异常 房门异常-->
+                        <div class="statebg">
+                            <img ng-src="{{me.getAlertStatus(room.jinJiHuJiao) | imagePath}}" />
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <!--保险箱,开关-->
+                        <div class="statebg">
+                            <img ng-src="{{room.baoXianGui==='Close'?'safeboxGrey.png':'safeboxColor.png' | imagePath}}" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

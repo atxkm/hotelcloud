@@ -1,0 +1,120 @@
+<div ng-controller="modules.room.components.manage.roomTypeForm as ctl">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$dismiss()">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+        </button>
+        <h3 class="modal-title">类型信息</h3>
+    </div>
+    <div class="modal-body">
+        <form name="form" role="form">
+            <div class="form-group" ng-class="{'has-error':form.rmtypename.$invalid}">
+                <div>
+                    <label>类型名称</label>
+                    <span class="text-danger pull-right" ng-show="form.rmtypename.$invalid">*名称不能为空</span>
+                </div>
+                <div>
+                    <input class="form-control" name="rmtypename" ng-model="data.rmtypename" placeholder="输入名称" required/>
+                </div>
+            </div>
+            <input type="hidden" ng-model="data.rmtypeid" />
+        </form>
+        <div class="form-group">
+            <div>
+                <label>电源信号</label>
+            </div>
+            <div class="panel panel-default">
+                <table ng-table="table" class="table table-hover">
+                    <colgroup>
+                        <col width="30%" />
+                        <col/>
+                        <col width="86px" />
+                    </colgroup>
+                    <tr class="ng-table-group info" ng-repeat-start="group in $groups" ng-init="group.$hideRows = false" ng-click="group.$hideRows = !group.$hideRows">
+                        <td colspan="3">
+                            <a href="">
+                                <i class="glyphicon" ng-class="{ 'glyphicon-chevron-right': group.$hideRows, 'glyphicon-chevron-down': !group.$hideRows }"></i>
+                                <strong>{{ ctl.getEquipment(group.value).equipmentname }}</strong>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr ng-hide="group.$hideRows" ng-repeat="row in group.data" ng-repeat-end>
+                        <td title="'路数'">
+                            <select ng-show="ctl.editing===row.idx" class="form-control input-sm" ng-model="ctl.current.elecroad" required ng-options="m.id as m.elename for m in roads"></select>
+                            <span ng-show="ctl.editing!==row.idx" ng-bind="roadNames[row.elecroad]"></span>
+                        </td>
+                        <td title="'名称'">
+                            <div ng-show="ctl.editing===row.idx" class="row">
+                                <div class="col-sm-6">
+                                    <input type="text" ng-model="ctl.current.elename" class="form-control input-sm" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <select ng-model="ctl.current.equid" class="form-control input-sm" ng-options="m.id as m.equipmentname for m in equipments"></select>
+                                </div>
+                            </div>
+                            <span ng-show="ctl.editing!==row.idx" ng-bind="row.elename"></span>
+                        </td>
+                        <td title="'操作'">
+                            <div ng-show="ctl.editing===row.idx" class="btn-group btn-group-sm">
+                                <button class="btn btn-success" ng-click="ctl.applyEditing(row.idx)">
+                                    <i class="glyphicon glyphicon-ok"></i>
+                                </button>
+                                <button class="btn btn-danger" ng-click="ctl.cancelEditing()">
+                                    <i class="glyphicon glyphicon-remove"></i>
+                                </button>
+                            </div>
+                            <div ng-show="ctl.editing!==row.idx" class="btn-group btn-group-xs">
+                                <button class="btn btn-default" ng-click="ctl.beginEditing(row.idx)">
+                                    <i class="glyphicon glyphicon-pencil"></i>
+                                </button>
+                                <button class="btn btn-danger" ng-click="ctl.removeLine(row.idx)">
+                                    <i class="glyphicon glyphicon-trash"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tfoot>
+                        <tr>
+                            <td>
+                                <select class="form-control input-sm" name="elecroad" ng-model="ctl.newLine.elecroad" ng-options="m.id as m.elename for m in roads"></select>
+                            </td>
+                            <td>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input type="text" name="elename" ng-model="ctl.newLine.elename" class="form-control input-sm" placeholder="名称" />
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <select class="form-control input-sm" name="equid" ng-model="ctl.newLine.equid" ng-options="m.id as m.equipmentname for m in equipments"></select>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <button class="btn btn-success btn-sm" ng-disabled="newForm.$invalid" ng-click="ctl.addLine()">
+                                    <i class="glyphicon glyphicon-ok"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <form name="currenForm" role="form">
+            <input type="hidden" name="equid" ng-model="ctl.current.equid" required>
+            <input type="hidden" name="elecroad" ng-model="ctl.current.elecroad" required>
+            <input type="hidden" name="elename" ng-model="ctl.current.elename" required>
+        </form>
+        <form name="newForm" role="form">
+            <!--设备主键-->
+            <input type="hidden" name="equid" ng-model="ctl.newLine.equid" required>
+            <!--路数id-->
+            <input type="hidden" name="elecroad" ng-model="ctl.newLine.elecroad" required>
+            <input type="hidden" name="elename" ng-model="ctl.newLine.elename" required>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="$close(data)" ng-disabled="form.$invalid">
+            <i class="glyphicon glyphicon-ok-sign"></i> 确定</button>
+        <button class="btn btn-default" ng-click="$dismiss()">
+            <i class="glyphicon glyphicon-remove-sign"></i> 取消</button>
+    </div>
+</div>

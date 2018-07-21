@@ -1,0 +1,13 @@
+{
+    "Data": {
+        "Data": [{
+            "Number": 1,
+            "Name": "超级管理员"
+        }, {
+            "Number": 2,
+            "Name": "用户"
+        }],
+        "Total": 200
+    },
+    "Success": true
+}

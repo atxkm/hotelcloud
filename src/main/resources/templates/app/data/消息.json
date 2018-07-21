@@ -1,0 +1,12 @@
+{
+    "Data": {
+        "Data": [{
+            "Id": 1,
+            "CardTypeCode": 1,
+            "CardTypeName": "超级管理员",
+            "Image": "",
+            "Description": ""
+        }]
+    },
+    "Success": true
+}

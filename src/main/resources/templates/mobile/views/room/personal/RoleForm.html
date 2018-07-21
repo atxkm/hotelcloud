@@ -1,0 +1,25 @@
+<div>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$dismiss()">
+            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+        </button>
+        <h3 class="modal-title">用户类别</h3>
+    </div>
+    <div class="modal-body">
+        <form name="form" role="form">
+            <div class="form-group" ng-class="{'has-error':form.Name.$invalid}">
+                <div>
+                    <label>名称</label>
+                    <span class="text-danger pull-right" ng-show="form.Name.$invalid">*名称不能为空</span>
+                </div>
+                <div>
+                    <input class="form-control" name="Name" ng-model="data.Name" placeholder="输入名称" required/>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="$close(data)" ng-disabled="form.$invalid"><i class="glyphicon glyphicon-ok-sign"></i> 确定</button>
+        <button class="btn btn-default" ng-click="$dismiss()"><i class="glyphicon glyphicon-remove-sign"></i> 取消</button>
+    </div>
+</div>

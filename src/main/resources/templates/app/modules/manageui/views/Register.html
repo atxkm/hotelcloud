@@ -1,0 +1,52 @@
+<div class="loginbg" ng-controller="modules/manageui/controllers/register as me" ng-init="me.getCode()">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="panel-body text-center">
+                    <div>
+                        <img width="120px" src="./images/logo.png" />
+                    </div>
+                    <!-- <h2 class="col-md-8">欢迎注册</h2> -->
+                </div>
+                <form class="container-fluid" name="form" role="form">
+                    <div class="form-group">
+                        <div>
+                            <input type="text" class="form-control" name="username" ng-model="username" placeholder="用户名" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <input type="text" class="form-control" name="machineno" ng-model="machineno" placeholder="机器号" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <input type="text" class="form-control" name="regnumber" ng-model="regnumber" placeholder="注册号码" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" ng-model="agree" required> 我同意注册协议
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary col-md-12" ng-disabled="form.$invalid" ng-click="me.regist()">注册</button>
+                    </div>
+                    <div class="form-group text-center">
+                        <div>
+                            <label class="form-control-static">
+                                <!-- <a href="">点击查看注册协议 ></a> -->
+                            </label>
+                        </div>
+                        <div>
+                            <label class="form-control-static">
+                                <a ng-href="#/login">返回</a>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+                <br/>
+            </div>
+        </div>
+    </div>
+</div>

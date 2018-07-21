@@ -1,0 +1,19 @@
+{
+    "Data": {
+        "Data": [{
+            "Id": 1,
+            "BuildName": "主楼",
+            "Floors": 15,
+            "BaseFloors": 3,
+            "DisabledFloors": []
+        }, {
+            "Id": 2,
+            "BuildName": "1号楼",
+            "Floors": 10,
+            "BaseFloors": 2,
+            "DisabledFloors": []
+        }]
+    },
+    "Success": true,
+    "Message": ""
+}

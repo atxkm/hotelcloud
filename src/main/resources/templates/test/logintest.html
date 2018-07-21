@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>登录测试页</title>
+</head>
+<body>
+    <input id="tijiao" type="submit" size="15"/>
+
+<script src="js/jquery.min.js" th:src="@{/templates/app/jquery.min.js}"></script>
+<script>
+    $("#tijiao").click(function () {
+        var bean={}
+        bean.loginName = "1";
+        bean.pwd="1";
+        $.ajax({
+            type: 'POST',
+            contentType: "application/json",
+            dataType: "json",
+            url: "http://127.0.0.1/person/login",
+            data:JSON.stringify(bean),
+            success: function (data) {
+                $("#res").html(JSON.stringify(data));
+                console.log(data);
+
+            },
+            error: function (e) {
+                console.log(e);
+            }
+        });
+    })
+</script>
+</body>
+</html>

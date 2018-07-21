@@ -1,0 +1,15 @@
+<div ng-controller="modules.room.controllers.mode as me">
+    <div class="navbar navbar-default navbar-static-top" style="margin: 0">
+        <div class="navbar-form pull-right">
+            <button class="btn btn-default" ng-click="me.add()"><i class="glyphicon glyphicon-plus-sign"></i> 添加</button>
+        </div>
+    </div>
+    <table ng-table="me.tableParams" class="table table-striped">
+        <tr ng-repeat="row in me.list">
+            <td title="'名称'"></td>
+            <td title="'模式类型'"></td>
+            <td title="'预设值'"></td>
+            <td title="'预设时间'"></td>
+        </tr>
+    </table>
+</div>

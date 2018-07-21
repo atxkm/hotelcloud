@@ -1,0 +1,100 @@
+<div ng-controller="modules/room/components/rcu/timeSettingsForm as me">
+  <div class="modal-header">
+    <button type="button" class="close" ng-click="$dismiss()">
+      <span aria-hidden="true">&times;</span>
+      <span class="sr-only">Close</span>
+    </button>
+    <h3 class="modal-title">
+      <strong>时间信息编辑</strong>
+    </h3>
+  </div>
+  <div class="modal-body">
+    <form name="form" role="form" class="row">
+      <div class="form-group col-md-12">
+        <div>
+          <label>房间号</label>
+        </div>
+        <div>
+          <input type="hidden" name="rcuid" ng-model="$data.rcuid">
+          <input class="form-control" name="buildingName" ng-model="$data.roomid" readonly>
+        </div>
+      </div>
+      <div class="form-group col-md-6" ng-class="{'has-error':form.roomtype.$invalid}">
+        <div>
+          <label>房间类型</label>
+          <span class="text-danger pull-right" ng-show="form.roomtype.$invalid">*请选择房间类型</span>
+        </div>
+        <div>
+          <select class="form-control" name="roomtype" ng-model="$data.roomtype" ng-options="type.rmtypeid as type.rmtypename for type in roomTypes" required></select>
+        </div>
+      </div>
+      <div class="form-group col-md-6" ng-class="{'has-error':form.link.$invalid}">
+        <div>
+          <label>连接</label>
+          <span class="text-danger pull-right" ng-show="form.link.$invalid">*连接不能为空</span>
+        </div>
+        <div>
+          <input class="form-control" name="link" ng-model="$data.link" placeholder="输入连接IP" required/>
+        </div>
+      </div>
+      <div class="form-group col-md-6" ng-class="{'has-error':form.millisecondth.$invalid}">
+        <div>
+          <label>30毫秒</label>
+          <span class="text-danger pull-right" ng-show="form.millisecondth.$invalid">*30毫秒不能为空</span>
+        </div>
+        <div class="container-fluid row">
+          <input class="form-control" name="millisecondth" ng-model="$data.millisecondth" placeholder="输入连接IP" required/>
+        </div>
+      </div>
+      <div class="form-group col-md-6" ng-class="{'has-error':form.millisecondtw.$invalid}">
+        <div>
+          <label>120毫秒</label>
+          <span class="text-danger pull-right" ng-show="form.millisecondtw.$invalid">*120毫秒不能为空</span>
+        </div>
+        <div class="container-fluid row">
+          <input class="form-control" name="millisecondtw" ng-model="$data.millisecondtw" placeholder="输入配置版本" required/>
+        </div>
+      </div>
+      <div class="form-group col-md-6" ng-class="{'has-error':form.second.$invalid}">
+        <div>
+          <label>秒</label>
+          <span class="text-danger pull-right" ng-show="form.second.$invalid">*秒不能为空</span>
+        </div>
+        <div class="container-fluid row">
+          <input class="form-control" name="second" ng-model="$data.second" placeholder="输入工程编号" required/>
+        </div>
+      </div>
+      <div class="form-group col-md-6" ng-class="{'has-error':form.minutes.$invalid}">
+        <div>
+          <label>分</label>
+          <span class="text-danger pull-right" ng-show="form.minutes.$invalid">*分不能为空</span>
+        </div>
+        <div class="container-fluid row">
+          <input class="form-control" name="minutes" ng-model="$data.minutes" placeholder="输入数值" required/>
+        </div>
+      </div>
+      <div class="form-group col-md-6" ng-class="{'has-error':form.hour.$invalid}">
+        <div>
+          <label>小时</label>
+          <span class="text-danger pull-right" ng-show="form.hour.$invalid">*小时不能为空</span>
+        </div>
+        <div class="container-fluid row">
+          <input class="form-control" name="hour" ng-model="$data.hour" placeholder="输入数值" required/>
+        </div>
+      </div>
+      <div class="form-group col-md-6" ng-class="{'has-error':form.torevise.$invalid}">
+        <div>
+          <label>修正值</label>
+          <span class="text-danger pull-right" ng-show="form.torevise.$invalid">*修正值不能为空</span>
+        </div>
+        <div class="container-fluid row">
+          <input class="form-control" name="torevise" ng-model="$data.torevise" placeholder="输入数值" required/>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" ng-click="$close($data)" ng-disabled="form.$invalid"><i class="glyphicon glyphicon-ok-sign"></i> 确定</button>
+    <button class="btn btn-default" ng-click="$dismiss()"><i class="glyphicon glyphicon-remove-sign"></i> 取消</button>
+  </div>
+</div>

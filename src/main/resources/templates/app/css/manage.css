@@ -1,0 +1,410 @@
+.manage-nav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.manage-nav-normal {
+    width: 220px;
+}
+
+.manage-nav-min {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.manage-nav-min .nav>li>a {
+    color: #a7b1c2;
+}
+
+.manage-nav-min .nav>li>a:focus,
+.manage-nav-min .nav>li>a:hover {
+    color: #fff;
+}
+
+.manage-nav-min .dropdown-menu {
+    margin-left: 65px;
+    margin-top: -40px;
+}
+
+.manage-nav-min .nav>li>a>.flag {
+    position: absolute;
+    left: 0;
+    margin-top: 8px;
+}
+
+.manage-nav-min .nav .open>a,
+.manage-nav-min .nav .open>a:focus,
+.manage-nav-min .nav .open>a:hover {
+    background-color: inherit;
+}
+
+.manage-content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+}
+
+.manage-content-normal {
+    left: 220px;
+}
+
+.manage-content-min {
+    left: 66px;
+}
+
+.manage-info {
+    margin-left: 70px;
+}
+
+.manage-content .manage-tab {
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.manage-content .manage-tab-content {
+    margin-top: 44px;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.manage-content .manage-tab-content .manage-tab-pane>div,
+.manage-content .manage-tab-content .manage-tab-pane>iframe {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.manage-content .tab {
+    border-bottom: solid 2px;
+    overflow: hidden;
+    height: 44px;
+}
+
+.manage-content .tab .nav>li>a {
+    overflow: hidden;
+    height: 42px;
+}
+
+.manage-content .tab .nav .tail {
+    width: 80px;
+    position: absolute;
+    right: 0;
+}
+
+.manage-content .tab .nav>li>a>button {
+    margin-left: 10px;
+}
+
+.manage-content .tab .nav .active>a {
+    color: #dfe4ed;
+}
+
+.manage-content .tab .nav .active>a>button.close {
+    color: #fff;
+}
+
+.manage-content .tab .nav .active>a>button.close:focus,
+.manage-content .tab .nav .active>a>button.close:hover {
+    color: #fff;
+}
+
+.manage-content .tab-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.manage-content .content {
+    overflow: auto;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.content-body {
+    margin-top: 50px;
+}
+
+.text-muted {
+    color: #8095a8;
+}
+
+.nav-header {
+    background-repeat: no-repeat;
+}
+
+.nav-header a {
+    color: #dfe4ed;
+}
+
+.manage-nav .nav>li>a {
+    color: #a7b1c2;
+    font-weight: 600;
+    padding: 14px 20px 14px 25px;
+}
+
+.manage-nav .nav>li>a:focus,
+.manage-nav .nav>li>a:hover {
+    color: #fff;
+}
+
+.manage-nav .nav>li>a i {
+    margin-right: 6px;
+}
+
+.manage-nav .nav>li.active {
+    border-left: 4px solid;
+}
+
+.manage-nav .nav.nav-second-level>li.active {
+    border: none;
+}
+
+.manage-nav .nav>li>.nav-second-level li a {
+    font-size: 12px;
+    border-radius: 0 2px 2px 0;
+}
+
+.manage-nav .nav-second-level li,
+.manage-nav .nav-third-level li {
+    border-bottom: none !important;
+}
+
+.manage-nav .nav-second-level li a {
+    padding: 7px 15px 7px 10px;
+    padding-left: 52px
+}
+
+.manage-nav .nav-second-level li:last-child {
+    margin-bottom: 10px
+}
+
+.manage-nav .nav-third-level li a {
+    padding-left: 62px
+}
+
+.arrow {
+    float: right;
+    margin-top: 2px;
+}
+
+.ng-table th {
+    text-align: left !important;
+}
+
+.ng-table-pager {
+    display: none !important;
+}
+
+.roomstate .state {
+    padding: 0 16px;
+}
+
+.roomstate .state .statebg {
+    margin-bottom: 2px;
+    margin-left: -14px;
+    margin-right: -14px;
+    background-color: #CCCCCC;
+}
+
+.roomstate .state-container {
+    padding: 0;
+}
+
+.roomstate .state-container .panel {
+    margin-top: 0;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-bottom: 6px;
+}
+
+.roomstate .state img {
+    width: 100%;
+    padding: 8px;
+}
+
+.roomstate .roomnum a {
+    font-size: 30pt;
+    color: orange;
+}
+
+.loginbg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url('../images/login-bg.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.comment-btn {
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: -1px;
+    right: 0;
+}
+
+.widget-column {
+    padding-bottom: 50px;
+}
+
+.widget-placeholder {
+    border: 1px dotted black;
+    margin: 0 1em 1em 0;
+    height: 50px;
+}
+
+.widget-toggle {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -8px;
+}
+
+.widget-column .list-group-item {
+    border-color: #f5f5f5;
+}
+
+.message-icon {
+    margin-right: 12px;
+}
+
+.message-number {
+    position: absolute;
+    left: 24px;
+    top: 4px;
+}
+
+.message-workplace {
+    position: relative;
+    height: 100%;
+}
+
+.message-workplace .message-column {
+    overflow: auto;
+    position: absolute;
+    top: 77px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
+
+.bs-callout h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.bs-callout p:last-child {
+    margin-bottom: 0;
+}
+
+.bs-callout code {
+    border-radius: 3px;
+}
+
+.bs-callout+.bs-callout {
+    margin-top: -5px;
+}
+
+.bs-callout-default {
+    border-left-color: #777;
+}
+
+.bs-callout-default h4 {
+    color: #777;
+}
+
+.bs-callout-primary {
+    border-left-color: #428bca;
+}
+
+.bs-callout-primary h4 {
+    color: #428bca;
+}
+
+.bs-callout-success {
+    border-left-color: #5cb85c;
+}
+
+.bs-callout-success h4 {
+    color: #5cb85c;
+}
+
+.bs-callout-danger {
+    border-left-color: #d9534f;
+}
+
+.bs-callout-danger h4 {
+    color: #d9534f;
+}
+
+.bs-callout-warning {
+    border-left-color: #f0ad4e;
+}
+
+.bs-callout-warning h4 {
+    color: #f0ad4e;
+}
+
+.bs-callout-info {
+    border-left-color: #5bc0de;
+}
+
+.bs-callout-info h4 {
+    color: #5bc0de;
+}
+
+.badge-warning {
+    background-color: #f0ad4e;
+}
+
+.badge-success {
+    background-color: #449d44;
+}
+
+.badge-danger {
+    background-color: #d9534f;
+}
+
+.badge-info {
+    background-color: #5bc0de;
+}
+
+.badge-primary {
+    background-color: #337ab7;
+}
+
+.datetimepicker .datetimepicker-days .table-condensed .switch {
+    display: table-cell;
+}

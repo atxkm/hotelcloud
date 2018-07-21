@@ -1,0 +1,66 @@
+<div class="layout" ng-controller="modules.mobileui.controllers.service as me">
+    <div class="mobile-navbar">
+        <div class="navbar-header pull-left mobilenav-btn">
+            <a ng-href="#/hotel"><img src="/mobile/images/btn-back.png"/></a>
+        </div>
+        <div class="mobile-title">
+            <h4 class="navbar-text text-center"><strong mobile-title></strong></h4>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="col-xs-4">
+            <a class="panel-body text-center" ng-click="me.send('shaohou')">
+                <div>
+                    <img src="/mobile/images/稍后.png" />
+                </div>
+                <div class="form-control-static">稍后</div>
+            </a>
+        </div>
+        <div class="col-xs-4">
+            <a class="panel-body text-center" ng-click="me.send('qingli')">
+                <div>
+                    <img src="/mobile//images/清理.png" />
+                </div>
+                <div class="form-control-static">清理</div>
+            </a>
+        </div>
+        <div class="col-xs-4">
+            <a class="panel-body text-center" ng-click="me.send('wurao')">
+                <div>
+                    <img src="/mobile/images/勿扰.png" />
+                </div>
+                <div class="form-control-static">勿扰</div>
+            </a>
+        </div>
+        <div class="col-xs-4">
+            <a class="panel-body text-center" ng-click="me.send('xiyi')">
+                <div>
+                    <img src="/mobile/images/洗衣.png" />
+                </div>
+                <div class="form-control-static">洗衣</div>
+            </a>
+        </div>
+        <div class="col-xs-4">
+            <a class="panel-body text-center" ng-click="me.send('jiaoche')">
+                <div>
+                    <img src="/mobile/images/叫车.png" />
+                </div>
+                <div class="form-control-static">叫车</div>
+            </a>
+        </div>
+        <div class="col-xs-4">
+            <a class="panel-body text-center" ng-click="me.send('diancan')">
+                <div>
+                    <img src="/mobile/images/点餐.png" />
+                </div>
+                <div class="form-control-static">点餐</div>
+            </a>
+        </div>
+        <div class="navbar navbar-default navbar-fixed-bottom" style="height: 51px">
+            <div class="container-fluid">
+                <div class="navbar-nav text-center">
+                    <a class="navbar-btn" ng-href="#/mobilemain/index"><i class="fa fa-times fa-fw fa-2x" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>

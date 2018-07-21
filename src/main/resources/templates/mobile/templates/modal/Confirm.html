@@ -1,0 +1,22 @@
+<div>
+    <!-- <div class="modal-header">
+        <h4 class="modal-title">
+            <span class="glyphicon glyphicon-question-sign"></span>&nbsp;确认
+        </h4>
+    </div> -->
+    <div class="modal-body">
+        <div class="text-center"><i class="fa fa-question-circle-o fa-5x" style="color: orange" aria-hidden="true"></i></div>
+    </div>
+    <div class="modal-body clearfix">
+        <p class="text-center" ng-if="$data.text"><strong>{{$data.text}}</strong></p>
+        <ul ng-if="$data.contents">
+            <li ng-repeat="content in $data.contents track by $index">{{content}}</li>
+        </ul>
+    </div>
+    <div class="modal-footer">
+        <div class="text-center">
+            <button class="btn btn-default" type="button" ng-click="$dismiss()"><i class="glyphicon glyphicon-remove-sign"></i>&nbsp;取消</button>
+            <button class="btn btn-danger" type="button" ng-click="$close('ok')"><i class="glyphicon glyphicon-ok-sign"></i>&nbsp;确定</button>
+        </div>
+    </div>
+</div>

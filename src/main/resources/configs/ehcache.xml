@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache updateCheck="false" name="auto_ehcache" maxBytesLocalDisk="20G" >
+
+    <diskStore path="user.dir/ehcachestore"/>
+
+    <defaultCache
+            eternal="false"
+            maxElementsInMemory="1000"
+            overflowToDisk="false"
+            diskPersistent="false"
+            timeToIdleSeconds="10"
+            timeToLiveSeconds="300"
+            memoryStoreEvictionPolicy="LRU"/>
+
+    <!-- timeToIdleSeconds 1800 为30分钟 -->
+    <cache
+            name="ZhsSession"
+            maxElementsInMemory="5000"
+            timeToIdleSeconds="1800"
+            timeToLiveSeconds="0"
+            memoryStoreEvictionPolicy="LRU"
+            overflowToDisk="false"/>
+
+
+    <cache
+            name="ZhsPersonRoleAuthorityOrg"
+            maxBytesLocalHeap="100M"
+            timeToIdleSeconds="1800"
+            timeToLiveSeconds="3600"
+            memoryStoreEvictionPolicy="LRU"
+            overflowToDisk="false"/>
+    <!-- person数据缓存-->
+
+    <cache
+            name="RCU"
+            maxBytesLocalHeap="30M"
+            timeToIdleSeconds="300"
+            timeToLiveSeconds="0"
+            memoryStoreEvictionPolicy="LRU"
+            overflowToDisk="false"/>
+    <cache
+            name="Room"
+            maxBytesLocalHeap="30M"
+            timeToIdleSeconds="10"
+            timeToLiveSeconds="10"
+            memoryStoreEvictionPolicy="LRU"
+            overflowToDisk="false"/>
+
+
+</ehcache>

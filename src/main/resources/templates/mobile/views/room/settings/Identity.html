@@ -1,0 +1,95 @@
+<div ng-controller="modules.room.controllers.identitySettings as me" ng-init="me.load()">
+    <div class="navbar navbar-default navbar-static-top" style="margin: 0">
+        <div class="container-fluid">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse">
+                <form class="navbar-form navbar-left" style="padding-left: 0">
+                    <div class="form-group"> 取电开关类型：
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-default">红外感应</button>
+                            <button type="button" class="btn btn-default">TIMIC</button>
+                            <button type="button" class="btn btn-default">MIFARE</button>
+                        </div>
+                    </div>
+                </form>
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> 保存</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <form name="listform" role="form">
+        <table ng-table="me.tableParams" class="table" style="margin: 0">
+            <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+                <col width="50px" />
+            </colgroup>
+            <tr ng-repeat="row in me.list">
+                <td title="'卡类型号'">
+                    <input type="text" class="form-control input-sm" ng-model="row.CardTypeCode" />
+                </td>
+                <td title="'类型名称'">
+                    <input type="text" class="form-control input-sm" ng-model="row.CardTypeName" />
+                </td>
+                <td title="'图像'">
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control input-sm" ng-model="row.Image" />
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" ng-click="me.selectImage(row)">选择</button>
+                        </div>
+                    </div>
+                </td>
+                <td title="'身份描述'">
+                    <input type="text" class="form-control input-sm" />
+                </td>
+                <td>
+                    <div class="btn-group btn-group-sm">
+                        <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove"></i></button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <form name="newform" role="form">
+        <table class="table">
+            <colgroup>
+                <col />
+                <col />
+                <col />
+                <col />
+                <col width="50px" />
+            </colgroup>
+            <tr>
+                <td title="'卡类型号'">
+                    <input type="text" class="form-control input-sm" />
+                </td>
+                <td title="'类型名称'">
+                    <input type="text" class="form-control input-sm" />
+                </td>
+                <td title="'图像'">
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control input-sm" />
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" ng-click="me.selectImage()">选择</button>
+                        </div>
+                    </div>
+                </td>
+                <td title="'身份描述'">
+                    <input type="text" class="form-control input-sm" />
+                </td>
+                <td>
+                    <div class="btn-group btn-group-sm">
+                        <button class="btn btn-success" type="button"><i class="glyphicon glyphicon-ok"></i></button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

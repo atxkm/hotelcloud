@@ -1,0 +1,83 @@
+server:
+  port: 80
+
+pt: dev
+
+
+spring:
+  #可解决 重启后404 问题
+  thymeleaf:
+  #当填写HTML5，启动时控制台会提示使用HTML替换H5
+#      mode: HTML
+      encoding: UTF-8
+      content-type: text/html
+      #开发时关闭缓存,不然没法看到实时页面
+      cache: false
+  http:
+    multipart:
+      enabled: true
+      max-file-size:  128MB
+      max-request-size: 128MB
+
+  devtools:
+    restart:
+      additional-paths: src/main/java,src/main/resources
+
+  datasource:
+    name: hotel
+    url: jdbc:mysql://127.0.0.1:3307/hotel?useUnicode=true&characterEncoding=UTF-8&useSSL=false&createDatabaseIfNotExist=true
+    username: root
+    password:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+
+  cache:
+    type: ehcache
+    ehcache:
+      config: classpath:configs/ehcache.xml
+
+mybatis:
+  #mapperLocations 可以是多个路径，逗号隔开即可
+  mapperLocations: classpath*:mybatis/mysql/*/*.xml
+#  typeAliasesPackage: cn.zhsit.authority.models.po
+
+zhsit:
+#    store: E:/zhsitfilestore
+    store: zhsstore
+    #未操作超时时间（秒）
+    expirySecond: 1800
+    #pc登录地址
+    pcLoginUrl: /p/index.html
+    #移动端登录地址
+    mobileLoginUrl: /m/index.html
+    #无权限pc端跳转地址
+    noAuthorityPcUrl: /p/noauthorityurl.html
+    #无权限移动端跳转地址
+    noAuthorityMobileUrl: /m/noauthorityurl.html
+    #不受登录拦截的url列表
+    loginExcludeUrl:
+      - /p/index.html
+      - /pa/**/login
+      - /pa/*/logout
+    authority:
+
+rcuws:
+  client:
+    sysNameText: 15652963646
+    sysNameBin: zhsit.cn
+
+h5ws:
+  uri: ws://127.0.0.1:80/h5ws

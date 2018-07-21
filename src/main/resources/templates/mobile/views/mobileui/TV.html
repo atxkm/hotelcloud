@@ -1,0 +1,69 @@
+<div class="layout" ng-controller="modules.mobileui.controllers.tv as me">
+    <div class="tv-top">
+        <div class="mobile-center" style="float: left; width: 30%">
+            <a class="btn-circle btn-red"><i class="fa fa-power-off" aria-hidden="true"></i></a>
+        </div>
+        <div class="mobile-center" style="float: right; width: 30%">
+            <a class="btn-circle btn-silver"><i class="fa fa-volume-off" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <div class="tv-middle">
+        <div style="height: 138px">
+            <div class="mobile-center" style="float: left; width: 50%">
+                <div class="tv-verticalbtn" style="margin-left: -16px">
+                    <div>
+                        <a href=""><i class="fa fa-plus" aria-hidden="true"></i></a>
+                    </div>
+                    <div>
+                        <span>音量</span>
+                    </div>
+                    <div>
+                        <a href=""><i class="fa fa-minus" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-center" style="float: left; width: 50%">
+                <div class="tv-verticalbtn" style="margin-right: -16px">
+                    <div>
+                        <a href=""><i class="fa fa-plus" aria-hidden="true"></i></a>
+                    </div>
+                    <div>
+                        <span>频道</span>
+                    </div>
+                    <div>
+                        <a href=""><i class="fa fa-minus" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-center" style="margin-top: -58px">
+            <div style="position: absolute; width: 100%">
+                <div class="tv-control">
+                    <a href="" ng-click="me.test()" class="control-row mobile-center" style="display: block; margin: 0 40px"><i class="glyphicon glyphicon-triangle-top" aria-hidden="true"></i></a>
+                    <div class="control-row">
+                        <a class="control-row-col"><i class="fa fa-backward" aria-hidden="true"></i></a>
+                        <a class="control-row-col"><i class="fa fa-play" aria-hidden="true"></i><i class="fa fa-pause" aria-hidden="true"></i></a>
+                        <a class="control-row-col"><i class="fa fa-forward" aria-hidden="true"></i></a>
+                    </div>
+                    <a href="" ng-click="me.test()" class="control-row mobile-center" style="display: block; margin: 0 40px"><i class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div style="padding-top: 106px">
+                <div style="float: left; width: 38%">
+                    <a class="btn-ellipse-sm">menu</a>
+                </div>
+                <div style="float: right; width: 38%">
+                    <a class="btn-ellipse-sm"><i class="fa fa-repeat" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="mobile-center" style="margin-top: -25px">
+
+        </div> -->
+    </div>
+    <div class="container-fluid tv-bottom">
+        <div class="mobile-col" style="width: 33.333333%;margin-bottom: 8px;" ng-repeat="num in numbers">
+            <a class="btn-rectangle-sm">{{num}}</a>
+        </div>
+    </div>
+</div>

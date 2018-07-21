@@ -1,0 +1,35 @@
+<div class="layout" ng-controller="modules.mobileui.controllers.mobilemain">
+    <div class="mobile-navbar">
+        <div class="navbar-header pull-left mobilenav-btn" ng-show="$state.$current.data.back&&$state.$current.data.back!==''">
+            <a ng-click="$state.go($state.$current.data.back)"><img src="/mobile/images/btn-back.png"/></a>
+        </div>
+        <div class="mobile-title">
+            <h4 class="navbar-text text-center"><strong mobile-title></strong></h4>
+        </div>
+    </div>
+    <div class="mobile-content" ui-view></div>
+    <div class="navbar navbar-default navbar-fixed-bottom" style="height: 51px">
+        <div class="container-fluid">
+            <div class="navbar-nav text-center">
+                <a class="navbar-btn" ng-href="#/index"><i class="fa fa-times fa-fw fa-2x" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-bottom">
+        <div class="text-center mobile-bottom-nav" style="width: 20%">
+            <a class="mobile-bottom_font"><strong>微 信</strong></a>
+        </div>
+        <div class="text-center mobile-bottom-nav" style="width: 20%">
+            <a class="mobile-bottom_font"><strong>酒 店</strong></a>
+        </div>
+        <div class="text-center mobile-bottom-btn" style="width: 20%">
+            +
+        </div>
+        <div class="text-center mobile-bottom-nav" style="width: 20%">
+            <a class="mobile-bottom_font"><strong>周 边</strong></a>
+        </div>
+        <div class="text-center mobile-bottom-nav" style="width: 20%">
+            <a class="mobile-bottom_font"><strong>退 房</strong></a>
+        </div>
+    </div>
+</div>

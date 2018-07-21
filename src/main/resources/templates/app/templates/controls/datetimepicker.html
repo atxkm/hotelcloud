@@ -1,0 +1,16 @@
+<div class="input-append date form_datetime">
+    <div ng-class="{'input-group':ngModel!==null&&ngModel!==''}">
+        <input class="form-control" type="text" readonly ng-model="ngModel" />
+        <div class="input-group-btn btn-group" ng-show="ngModel!==null&&ngModel!==''">
+            <button class="btn btn-danger" ng-click="ngModel=null">
+                <i class="glyphicon glyphicon glyphicon-remove"></i>
+            </button>
+        </div>
+    </div>
+    <span class="add-on">
+        <i class="icon-remove"></i>
+    </span>
+    <span class="add-on">
+        <i class="icon-calendar"></i>
+    </span>
+</div>

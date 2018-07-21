@@ -1,0 +1,66 @@
+<div ng-controller="modules.room.controllers.buildForm as ctl">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$dismiss()">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+        </button>
+        <h3 class="modal-title">
+            <strong>楼栋信息</strong>
+        </h3>
+    </div>
+    <div class="modal-body">
+        <form name="form" role="form" class="row">
+            <div class="form-group col-md-12" ng-class="{'has-error':form.buildingName.$invalid}">
+                <div>
+                    <label>楼栋名称</label>
+                    <span class="text-danger pull-right" ng-show="form.buildingName.$invalid">*名称不能为空</span>
+                </div>
+                <div>
+                    <input class="form-control" name="buildingName" ng-model="$data.buildingName" placeholder="输入名称" required/>
+                </div>
+            </div>
+            <div class="form-group col-md-6" ng-class="{'has-error':form.floor.$invalid}">
+                <div>
+                    <label>楼层数</label>
+                    <span class="text-danger pull-right" ng-show="form.floor.$invalid">*楼层数不正确</span>
+                </div>
+                <div>
+                    <input class="form-control" type="number" name="floor" ng-model="$data.floor" placeholder="输入数字" min="1" required/>
+                </div>
+            </div>
+            <div class="form-group col-md-6" ng-class="{'has-error':form.subFloor.$invalid}">
+                <div>
+                    <label>地下室数</label>
+                    <span class="text-danger pull-right" ng-show="form.subFloor.$invalid">*地下室数不正确</span>
+                </div>
+                <div>
+                    <input class="form-control" type="number" name="subFloor" ng-model="$data.subFloor" placeholder="输入数字" min="0" required/>
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <div>
+                    <label>地上</label>
+                </div>
+                <div class="container-fluid row">
+                    <button type="button" class="btn col-md-1" ng-class="{'btn-default':$data.excludes.indexOf(num+'')>=0, 'btn-success':$data.excludes.indexOf(num+'')<0}"
+                        ng-click="ctl.floorChange(num)" ng-repeat="num in ctl.floors($data.floor)">{{num}}</button>
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <div>
+                    <label>地下室</label>
+                </div>
+                <div class="container-fluid row">
+                    <button type="button" class="btn col-md-1" ng-class="{'btn-default':$data.excsubs.indexOf(num)>=0, 'btn-success':$data.excsubs.indexOf(num)<0}"
+                        ng-click="ctl.subChange(num)" ng-repeat="num in ctl.floors($data.subFloor)">{{num}}</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="$close($data)" ng-disabled="form.$invalid">
+            <i class="glyphicon glyphicon-ok-sign"></i> 确定</button>
+        <button class="btn btn-default" ng-click="$dismiss()">
+            <i class="glyphicon glyphicon-remove-sign"></i> 取消</button>
+    </div>
+</div>

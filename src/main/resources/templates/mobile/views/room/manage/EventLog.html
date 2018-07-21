@@ -1,0 +1,147 @@
+<div>
+    <div class="navbar navbar-default navbar-static-top" style="margin: 0">
+        <ul class="nav navbar-nav" role="tablist">
+            <li role="presentation" class="active"><a href="#evt_room" aria-controls="evt_room" role="tab" data-toggle="tab"><strong>房间事件</strong></a></li>
+            <li role="presentation"><a href="#evt_system" aria-controls="evt_system" role="tab" data-toggle="tab"><strong>系统事件</strong></a></li>
+        </ul>
+    </div>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="evt_room">
+            <div class="panel" ng-controller="modules.room.controllers.eventSystem as me">
+                <div class="panel-body">
+                    <form class="row">
+                        <div class="form-group col-md-4">
+                            <label>事件类型</label>
+                            <div>
+                                <select class="form-control"></select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>楼栋</label>
+                            <div>
+                                <select class="form-control"></select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>楼层</label>
+                            <div>
+                                <select class="form-control"></select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>房间号</label>
+                            <div>
+                                <select class="form-control"></select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>查询时间</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input class="form-control" />
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>&nbsp;</label>
+                            <div class="text-right">
+                                <div class="btn-group">
+                                    <button class="btn btn-default"><i class="glyphicon glyphicon-search"></i> 查询</button>
+                                    <button class="btn btn-default"><i class="glyphicon glyphicon-export"></i> 导出</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <table ng-table="me.tableParams" class="table table-striped table-hover">
+                    <tr ng-repeat="row in me.list">
+                        <td title="'房间编号'"></td>
+                        <td title="'楼栋名称'"></td>
+                        <td title="'楼层'"></td>
+                        <td title="'事件'"></td>
+                        <td title="'描述'"></td>
+                        <td title="'时间'"></td>
+                    </tr>
+                </table>
+                <div ng-pager="me.tableParams"></div>
+                <!-- <div class="tab-footer container-fluid text-right">
+                    <ul class="pagination">
+                        <li>
+                            <a href="" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+                        </li>
+                        <li><a href="">1</a></li>
+                        <li><a href="">2</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">4</a></li>
+                        <li><a href="">5</a></li>
+                        <li>
+                            <a href="" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+                        </li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="evt_system">
+            <div class="panel" ng-controller="modules.room.controllers.eventRoom as me">
+                <div class="panel-body">
+                    <form class="row">
+                        <div class="form-group col-md-4">
+                            <label>事件类型</label>
+                            <div>
+                                <select class="form-control"></select>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>查询时间</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input class="form-control" />
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>&nbsp;</label>
+                            <div class="text-right">
+                                <div class="btn-group">
+                                    <button class="btn btn-default"><i class="glyphicon glyphicon-search"></i> 查询</button>
+                                    <button class="btn btn-default"><i class="glyphicon glyphicon-export"></i> 导出</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <table ng-table="me.tableParams" class="table table-striped table-hover">
+                    <tr ng-repeat="row in me.list">
+                        <td title="'记录编号'"></td>
+                        <td title="'操作时间'"></td>
+                        <td title="'操作员'"></td>
+                        <td title="'事件'"></td>
+                        <td title="'备注'"></td>
+                    </tr>
+                </table>
+                <div ng-pager="me.tableParams"></div>
+                <!--<div class="panel">
+                    <ul class="pagination">
+                        <li>
+                            <a href="" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+                        </li>
+                        <li><a href="">1</a></li>
+                        <li><a href="">2</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">4</a></li>
+                        <li><a href="">5</a></li>
+                        <li>
+                            <a href="" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+                        </li>
+                    </ul>
+                </div>-->
+            </div>
+        </div>
+    </div>
+</div>

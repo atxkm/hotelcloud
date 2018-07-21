@@ -1,0 +1,135 @@
+<div ng-controller="modules.room.controllers.message as me">
+    <div class="navbar navbar-default navbar-static-top" style="margin: 0">
+        <div class="container-fluid">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse">
+                <form class="navbar-form navbar-left" style="padding-left: 0">
+                    <button class="btn btn-default" ng-click="service.activeAll()">全部</button>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default" ng-class="{'active':service.actives.checkIn, 'btn-primary':service.actives.checkIn}"
+                            ng-click="service.active('checkIn')">
+                            <i class="fa fa-address-card fa-fw"></i> 登记</button>
+                        <!-- <button type="button" class="btn btn-default" ng-class="{'active':service.actives.room, 'btn-primary':service.actives.room}"
+                            ng-click="service.active('room')"><i class="fa fa-bed fa-fw" aria-hidden="true"></i> 房态</button> -->
+                        <button type="button" class="btn btn-default" ng-class="{'active':service.actives.message, 'btn-primary':service.actives.message}"
+                            ng-click="service.active('message')">
+                            <i class="fa fa-envelope fa-fw" aria-hidden="true"></i> 信息</button>
+                        <button type="button" class="btn btn-default" ng-class="{'active':service.actives.call, 'btn-primary':service.actives.call}"
+                            ng-click="service.active('call')">
+                            <i class="fa fa-bell fa-fw" aria-hidden="true"></i> 呼叫</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <table ng-table="me.tableParams" class="table table-striped">
+        <tr>
+            <td title="'操作'"></td>
+            <td title="'时间'"></td>
+            <td title="'消息类型'"></td>
+            <td title="'内容'"></td>
+            <td title="'优先级'"></td>
+            <td title="'时间'"></td>
+        </tr>
+    </table>
+    <div ng-pager="me.tableParams"></div>
+    <!-- <div class="container-fluid row content content-body">
+        <div class="col-md-9 message-workplace">
+            <h4 class="page-header"><i class="glyphicon glyphicon-edit"></i> <label>待处理</label></h4>
+            <div class="panel-body message-column">
+
+                <div class="row messagestore">
+                    <div class="col-md-4" style="position: inherit">
+                        <div class="bs-callout bs-callout-warning">
+                            <label>sssss</label>
+                            <div>
+                                <span class="text-muted"><i class="glyphicon glyphicon-time"></i> 2017-4-4</span>
+                                <div class="pull-right">
+                                    <button class="btn btn-default btn-xs">受理</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="bs-callout bs-callout-warning">
+                            <label>sssss</label>
+                            <div>
+                                <span class="text-muted"><i class="glyphicon glyphicon-time"></i> 2017-4-4</span>
+                                <div class="pull-right">
+                                    <button class="btn btn-default btn-xs">受理</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="bs-callout bs-callout-warning">
+                            <label>sssss</label>
+                            <div>
+                                <span class="text-muted"><i class="glyphicon glyphicon-time"></i> 2017-4-4</span>
+                                <div class="pull-right">
+                                    <button class="btn btn-default btn-xs">受理</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-3 message-workplace">
+            <h4 class="page-header"><i class="glyphicon glyphicon-bookmark"></i> <label>已标记</label></h4>
+            <div class="panel-body message-column">
+
+                <div class="row markstore">
+                    <div class="col-md-12">
+                        <div class="bs-callout bs-callout-warning">
+                            <label>sssss</label>
+                            <div>
+                                <span class="text-muted"><i class="glyphicon glyphicon-time"></i> 2017-4-4</span>
+                                <div class="pull-right">
+                                    <button class="btn btn-default btn-xs">受理</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="bs-callout bs-callout-warning">
+                            <label>sssss</label>
+                            <div>
+                                <span class="text-muted"><i class="glyphicon glyphicon-time"></i> 2017-4-4</span>
+                                <div class="pull-right">
+                                    <button class="btn btn-default btn-xs">受理</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="bs-callout bs-callout-primary">
+                            <label>sssss</label>
+                            <div>
+                                <span class="text-muted"><i class="glyphicon glyphicon-time"></i> 2017-4-4</span>
+                                <div class="pull-right">
+                                    <button class="btn btn-default btn-xs">确认</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="bs-callout bs-callout-warning">
+                            <label>sssss</label>
+                            <div>
+                                <span class="text-muted"><i class="glyphicon glyphicon-time"></i> 2017-4-4</span>
+                                <div class="pull-right">
+                                    <button class="btn btn-default btn-xs">受理</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div> -->
+</div>

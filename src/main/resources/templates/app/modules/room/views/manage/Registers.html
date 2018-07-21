@@ -1,0 +1,32 @@
+<div ng-controller="modules/room/controllers/registers as me" ng-init="me.tableParams.reload()">
+    <div ng-pager="me.tableParams"></div>
+    <div style="position: absolute; bottom: 0; left: 0; right: 0; top:70px; overflow: auto">
+        <div class="col-md-4" ng-repeat="rec in me.tableParams.data">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    房间号：
+                    <span class="form-control-static" ng-bind="rec.roomid"></span>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label>客人姓名</label>
+                        <div>
+                            <span class="form-control-static" ng-bind="rec.guestname"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>入住时间</label>
+                        <div>
+                            <span class="form-control-static" ng-bind="rec.entertime"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table ng-table="me.tableParams" style="visibility: collapse">
+        <tr ng-repeat="row in $data">
+            <tb>{{row.guestname}}</tb>
+        </tr>
+    </table>
+</div>

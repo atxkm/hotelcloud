@@ -1,0 +1,46 @@
+.nav-header {
+    background-color: #79004F;
+}
+
+
+/*导航栏(小)*/
+
+.manage-nav-min {
+    background-color: #5D003D;
+}
+
+.manage-nav-min .nav>li>a:focus,
+.manage-nav-min .nav>li>a:hover {
+    background-color: #651148;
+    color: #fff;
+}
+
+
+/*导航栏(大)*/
+
+.manage-nav {
+    background-color: #5D003D;
+}
+
+.manage-nav .nav>li>a:focus,
+.manage-nav .nav>li>a:hover {
+    background-color: #651148;
+    color: #fff;
+}
+
+.manage-nav .nav>li.active {
+    border-left-color: #6BB235;
+    background: #651148;
+}
+
+
+/*标签页*/
+
+.manage-content .tab {
+    border-bottom-color: #79004F;
+}
+
+.manage-content .tab .nav .active>a {
+    background: #79004F;
+    color: #dfe4ed;
+}

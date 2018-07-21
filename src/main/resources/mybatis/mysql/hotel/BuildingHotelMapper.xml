@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zhsit.hotel.daos.BuildingHotelMapper">
+   <resultMap id="BaseResultMap" type="cn.zhsit.hotel.models.po.BuildingHotel">
+    <id column="building_id" jdbcType="VARCHAR" property="buildingId" />
+    <result column="building_name" jdbcType="VARCHAR" property="buildingName" />
+    <result column="floor" jdbcType="INTEGER" property="floor" />
+    <result column="sub_floor" jdbcType="INTEGER" property="subFloor" />
+    <result column="managerid" jdbcType="INTEGER" property="managerid" />
+    <result column="bld_manager" jdbcType="VARCHAR" property="bldManager" />
+    <result column="num" jdbcType="INTEGER" property="num" />
+    <result column="buildyear" jdbcType="DATE" property="buildyear" />
+    <result column="bldimage" jdbcType="VARCHAR" property="bldimage" />
+    <result column="bldarea" jdbcType="VARCHAR" property="bldarea" />
+    <result column="unitnum" jdbcType="INTEGER" property="unitnum" />
+    <result column="opttime" jdbcType="TIMESTAMP" property="opttime" />
+    <result column="iptperson" jdbcType="VARCHAR" property="iptperson" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="extfloor" jdbcType="VARCHAR" property="extfloor" />
+    <result column="extsubfloor" jdbcType="VARCHAR" property="extsubfloor" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    building_id, building_name, floor, sub_floor, managerid, bld_manager, num, buildyear, 
+    bldimage, bldarea, unitnum, opttime, iptperson, remark, extfloor, extsubfloor
+  </sql>
+  <select id="selectByExample" parameterType="cn.zhsit.hotel.models.po.BuildingHotelExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_building_hotel
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_building_hotel
+    where building_id = #{buildingId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_building_hotel
+    where building_id = #{buildingId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="cn.zhsit.hotel.models.po.BuildingHotelExample">
+    delete from t_building_hotel
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.zhsit.hotel.models.po.BuildingHotel">
+    insert into t_building_hotel (building_id, building_name, floor, 
+      sub_floor, managerid, bld_manager, 
+      num, buildyear, bldimage, 
+      bldarea, unitnum, opttime, 
+      iptperson, remark, extfloor, 
+      extsubfloor)
+    values (#{buildingId,jdbcType=VARCHAR}, #{buildingName,jdbcType=VARCHAR}, #{floor,jdbcType=INTEGER}, 
+      #{subFloor,jdbcType=INTEGER}, #{managerid,jdbcType=INTEGER}, #{bldManager,jdbcType=VARCHAR}, 
+      #{num,jdbcType=INTEGER}, #{buildyear,jdbcType=DATE}, #{bldimage,jdbcType=VARCHAR}, 
+      #{bldarea,jdbcType=VARCHAR}, #{unitnum,jdbcType=INTEGER}, #{opttime,jdbcType=TIMESTAMP}, 
+      #{iptperson,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{extfloor,jdbcType=VARCHAR}, 
+      #{extsubfloor,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.zhsit.hotel.models.po.BuildingHotel">
+    insert into t_building_hotel
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="buildingId != null">
+        building_id,
+      </if>
+      <if test="buildingName != null">
+        building_name,
+      </if>
+      <if test="floor != null">
+        floor,
+      </if>
+      <if test="subFloor != null">
+        sub_floor,
+      </if>
+      <if test="managerid != null">
+        managerid,
+      </if>
+      <if test="bldManager != null">
+        bld_manager,
+      </if>
+      <if test="num != null">
+        num,
+      </if>
+      <if test="buildyear != null">
+        buildyear,
+      </if>
+      <if test="bldimage != null">
+        bldimage,
+      </if>
+      <if test="bldarea != null">
+        bldarea,
+      </if>
+      <if test="unitnum != null">
+        unitnum,
+      </if>
+      <if test="opttime != null">
+        opttime,
+      </if>
+      <if test="iptperson != null">
+        iptperson,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="extfloor != null">
+        extfloor,
+      </if>
+      <if test="extsubfloor != null">
+        extsubfloor,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="buildingId != null">
+        #{buildingId,jdbcType=VARCHAR},
+      </if>
+      <if test="buildingName != null">
+        #{buildingName,jdbcType=VARCHAR},
+      </if>
+      <if test="floor != null">
+        #{floor,jdbcType=INTEGER},
+      </if>
+      <if test="subFloor != null">
+        #{subFloor,jdbcType=INTEGER},
+      </if>
+      <if test="managerid != null">
+        #{managerid,jdbcType=INTEGER},
+      </if>
+      <if test="bldManager != null">
+        #{bldManager,jdbcType=VARCHAR},
+      </if>
+      <if test="num != null">
+        #{num,jdbcType=INTEGER},
+      </if>
+      <if test="buildyear != null">
+        #{buildyear,jdbcType=DATE},
+      </if>
+      <if test="bldimage != null">
+        #{bldimage,jdbcType=VARCHAR},
+      </if>
+      <if test="bldarea != null">
+        #{bldarea,jdbcType=VARCHAR},
+      </if>
+      <if test="unitnum != null">
+        #{unitnum,jdbcType=INTEGER},
+      </if>
+      <if test="opttime != null">
+        #{opttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="iptperson != null">
+        #{iptperson,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="extfloor != null">
+        #{extfloor,jdbcType=VARCHAR},
+      </if>
+      <if test="extsubfloor != null">
+        #{extsubfloor,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cn.zhsit.hotel.models.po.BuildingHotelExample" resultType="java.lang.Long">
+    select count(*) from t_building_hotel
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update t_building_hotel
+    <set>
+      <if test="record.buildingId != null">
+        building_id = #{record.buildingId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.buildingName != null">
+        building_name = #{record.buildingName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.floor != null">
+        floor = #{record.floor,jdbcType=INTEGER},
+      </if>
+      <if test="record.subFloor != null">
+        sub_floor = #{record.subFloor,jdbcType=INTEGER},
+      </if>
+      <if test="record.managerid != null">
+        managerid = #{record.managerid,jdbcType=INTEGER},
+      </if>
+      <if test="record.bldManager != null">
+        bld_manager = #{record.bldManager,jdbcType=VARCHAR},
+      </if>
+      <if test="record.num != null">
+        num = #{record.num,jdbcType=INTEGER},
+      </if>
+      <if test="record.buildyear != null">
+        buildyear = #{record.buildyear,jdbcType=DATE},
+      </if>
+      <if test="record.bldimage != null">
+        bldimage = #{record.bldimage,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bldarea != null">
+        bldarea = #{record.bldarea,jdbcType=VARCHAR},
+      </if>
+      <if test="record.unitnum != null">
+        unitnum = #{record.unitnum,jdbcType=INTEGER},
+      </if>
+      <if test="record.opttime != null">
+        opttime = #{record.opttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.iptperson != null">
+        iptperson = #{record.iptperson,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remark != null">
+        remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.extfloor != null">
+        extfloor = #{record.extfloor,jdbcType=VARCHAR},
+      </if>
+      <if test="record.extsubfloor != null">
+        extsubfloor = #{record.extsubfloor,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update t_building_hotel
+    set building_id = #{record.buildingId,jdbcType=VARCHAR},
+      building_name = #{record.buildingName,jdbcType=VARCHAR},
+      floor = #{record.floor,jdbcType=INTEGER},
+      sub_floor = #{record.subFloor,jdbcType=INTEGER},
+      managerid = #{record.managerid,jdbcType=INTEGER},
+      bld_manager = #{record.bldManager,jdbcType=VARCHAR},
+      num = #{record.num,jdbcType=INTEGER},
+      buildyear = #{record.buildyear,jdbcType=DATE},
+      bldimage = #{record.bldimage,jdbcType=VARCHAR},
+      bldarea = #{record.bldarea,jdbcType=VARCHAR},
+      unitnum = #{record.unitnum,jdbcType=INTEGER},
+      opttime = #{record.opttime,jdbcType=TIMESTAMP},
+      iptperson = #{record.iptperson,jdbcType=VARCHAR},
+      remark = #{record.remark,jdbcType=VARCHAR},
+      extfloor = #{record.extfloor,jdbcType=VARCHAR},
+      extsubfloor = #{record.extsubfloor,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.zhsit.hotel.models.po.BuildingHotel">
+    update t_building_hotel
+    <set>
+      <if test="buildingName != null">
+        building_name = #{buildingName,jdbcType=VARCHAR},
+      </if>
+      <if test="floor != null">
+        floor = #{floor,jdbcType=INTEGER},
+      </if>
+      <if test="subFloor != null">
+        sub_floor = #{subFloor,jdbcType=INTEGER},
+      </if>
+      <if test="managerid != null">
+        managerid = #{managerid,jdbcType=INTEGER},
+      </if>
+      <if test="bldManager != null">
+        bld_manager = #{bldManager,jdbcType=VARCHAR},
+      </if>
+      <if test="num != null">
+        num = #{num,jdbcType=INTEGER},
+      </if>
+      <if test="buildyear != null">
+        buildyear = #{buildyear,jdbcType=DATE},
+      </if>
+      <if test="bldimage != null">
+        bldimage = #{bldimage,jdbcType=VARCHAR},
+      </if>
+      <if test="bldarea != null">
+        bldarea = #{bldarea,jdbcType=VARCHAR},
+      </if>
+      <if test="unitnum != null">
+        unitnum = #{unitnum,jdbcType=INTEGER},
+      </if>
+      <if test="opttime != null">
+        opttime = #{opttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="iptperson != null">
+        iptperson = #{iptperson,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="extfloor != null">
+        extfloor = #{extfloor,jdbcType=VARCHAR},
+      </if>
+      <if test="extsubfloor != null">
+        extsubfloor = #{extsubfloor,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where building_id = #{buildingId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.zhsit.hotel.models.po.BuildingHotel">
+    update t_building_hotel
+    set building_name = #{buildingName,jdbcType=VARCHAR},
+      floor = #{floor,jdbcType=INTEGER},
+      sub_floor = #{subFloor,jdbcType=INTEGER},
+      managerid = #{managerid,jdbcType=INTEGER},
+      bld_manager = #{bldManager,jdbcType=VARCHAR},
+      num = #{num,jdbcType=INTEGER},
+      buildyear = #{buildyear,jdbcType=DATE},
+      bldimage = #{bldimage,jdbcType=VARCHAR},
+      bldarea = #{bldarea,jdbcType=VARCHAR},
+      unitnum = #{unitnum,jdbcType=INTEGER},
+      opttime = #{opttime,jdbcType=TIMESTAMP},
+      iptperson = #{iptperson,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      extfloor = #{extfloor,jdbcType=VARCHAR},
+      extsubfloor = #{extsubfloor,jdbcType=VARCHAR}
+    where building_id = #{buildingId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByManagerId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_building_hotel where managerid = #{0}
+  </select>
+</mapper>

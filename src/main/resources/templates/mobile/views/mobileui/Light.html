@@ -1,0 +1,74 @@
+<div class="layout" ng-controller="modules.mobileui.controllers.light as me">
+    <div class="mobile-center" style="padding-top: 20px;">
+        <!-- <a ng-class="{ 'btn-ellipse-orange': me.tCtrl, 'btn-ellipse': !me.tCtrl }" ng-click="me.changeT()">总 控</a> -->
+    </div>
+    <!-- <div class="light-sp mobile-center">灯光模式</div>
+    <div class="container-fluid row">
+        <div class="light-col">
+            <div class="light-panel">
+                <div class="light-title">会客模式</div>
+                <div class="light-control">
+                    <a class="light-btn" style="float: left"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                    <span>调 光</span>
+                    <a class="light-btn" style="float: right"><i class="fa fa-minus" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="light-col">
+            <div class="light-panel">
+                <div class="light-title">娱乐模式</div>
+                <div class="light-control">
+                    <a class="light-btn" style="float: left"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                    <span>调 光</span>
+                    <a class="light-btn" style="float: right"><i class="fa fa-minus" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="light-col">
+            <div class="light-panel">
+                <div class="light-title">记忆模式</div>
+                <div class="light-control">
+                    <a class="light-btn" style="float: left"><i class="fa fa-plus" aria-hidden="true"></i></a>
+                    <span>调 光</span>
+                    <a class="light-btn" style="float: right"><i class="fa fa-minus" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="light-sp mobile-center">房间灯光</div>
+    <div class="container-fluid row">
+        <div class="light-col">
+            <div class="light-panel">
+                <div class="light-title">灯光一</div>
+                <div class="light-bar">
+                    <a class="light-btn-lg" style="float: left"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></a>
+                    <div class="slider">
+                        <rzslider rz-slider-model="lights[0].value" rz-slider-options="opts"></rzslider>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="light-col">
+            <div class="light-panel">
+                <div class="light-title">灯光二</div>
+                <div class="light-bar">
+                    <a class="light-btn-lg" style="float: left"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></a>
+                    <div class="slider">
+                        <rzslider rz-slider-model="lights[1].value" rz-slider-options="opts"></rzslider>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="light-col">
+            <div class="light-panel">
+                <div class="light-title">灯光三</div>
+                <div class="light-bar">
+                    <a class="light-btn-lg" style="float: left"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></a>
+                    <div class="slider">
+                        <rzslider rz-slider-model="lights[2].value" rz-slider-options="opts"></rzslider>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

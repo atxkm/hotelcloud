@@ -1,0 +1,142 @@
+<div ng-controller="modules.room.controllers.roomForm as me">
+  <!-- <div> -->
+  <div class="modal-header">
+    <button type="button" class="close" ng-click="$dismiss()">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+        </button>
+    <h3 class="modal-title">房间信息</h3>
+  </div>
+  <div class="modal-body">
+    <form name="form" role="form" class="row">
+      <!-- <div class="form-group col-md-6">
+                <div>
+                    <label>楼栋</label>
+                </div>
+                <div>
+                    <span class="form-control-static" ng-bind="data.buildingName"></span>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <div>
+                    <label>楼层</label>
+                </div>
+                <div>
+                    <span class="form-control-static" ng-bind="data.floorname"></span>
+                </div>
+            </div> -->
+      <div class="form-group col-md-12" ng-class="{'has-error':form.roomnum.$invalid}">
+        <div>
+          <label>房号</label>
+          <span class="text-danger pull-right" ng-show="form.roomnum.$invalid">*房号不能为空</span>
+        </div>
+        <div>
+          <input class="form-control" name="roomnum" ng-model="$data.roomnum" placeholder="输入房号" required/>
+        </div>
+      </div>
+      <div class="form-group col-md-6" ng-class="{'has-error':form.roomtypeid.$invalid}">
+        <div>
+          <label>房间类型</label>
+          <span class="text-danger pull-right" ng-show="form.roomtypeid.$invalid">*类型不能为空</span>
+        </div>
+        <div>
+          <select class="form-control" name="roomtypeid" ng-model="$data.roomtypeid" ng-options="type.rmtypeid as type.rmtypename for type in roomTypes" required ng-change="selectType($data.roomtypeid)"></select>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <div>
+          <label>朝向</label>
+        </div>
+        <div>
+          <input type="text" class="form-control" />
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <div>
+          <label>IP</label>
+        </div>
+        <div>
+          <input type="text" class="form-control" ng-model="$data.roomip" />
+        </div>
+      </div>
+      <!-- <div class="id">
+                {{ $data.id}}
+            </div> -->
+      <input type="hidden" ng-model="$data.id" />
+    </form>
+    <!-- <form name="lineform" role="form">
+            <div class="form-group">
+                <div>
+                    <label>电源信号</label>
+                </div>
+                <div class="panel panel-default">
+                    <table ng-table="table" class="table table-hover">
+                        <colgroup>
+                            <col width="30%" />
+                            <col/>
+                            <col width="86px" />
+                        </colgroup>
+                        <tr class="ng-table-group info" ng-repeat-start="group in $groups" ng-init="group.$hideRows = false" ng-click="group.$hideRows = !group.$hideRows">
+                            <td colspan="3">
+                                <a href=""><i class="glyphicon" ng-class="{ 'glyphicon-chevron-right': group.$hideRows, 'glyphicon-chevron-down': !group.$hideRows }"></i> <strong>{{ ctl.groups[group.value] }}</strong></a>
+                            </td>
+                        </tr>
+                        <tr ng-hide="group.$hideRows" ng-repeat="row in group.data" ng-repeat-end>
+                            <td title="'路数'">
+                                <input ng-show="ctl.editing===row.idx" type="text" ng-model="ctl.current.Number" class="form-control input-sm" />
+                                <span ng-show="ctl.editing!==row.idx" ng-bind="row.Number"></span>
+                            </td>
+                            <td title="'名称'">
+                                <div ng-show="ctl.editing===row.idx" class="row">
+                                    <div class="col-sm-6">
+                                        <input type="text" ng-model="ctl.current.Name" class="form-control input-sm" />
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <select ng-model="ctl.current.GroupId" class="form-control input-sm" ng-options="m.Key as m.Name for m in groups"></select>
+                                    </div>
+                                </div>
+                                <span ng-show="ctl.editing!==row.idx" ng-bind="row.Name"></span>
+                            </td>
+                            <td title="'操作'">
+                                <div ng-show="ctl.editing===row.idx" class="btn-group btn-group-sm">
+                                    <button class="btn btn-success" ng-click="ctl.applyEditing(row.idx)"><i class="glyphicon glyphicon-ok"></i></button>
+                                    <button class="btn btn-danger" ng-click="ctl.cancelEditing()"><i class="glyphicon glyphicon-remove"></i></button>
+                                </div>
+                                <div ng-show="ctl.editing!==row.idx" class="btn-group btn-group-xs">
+                                    <button class="btn btn-default" ng-click="ctl.beginEditing(row.idx)"><i class="glyphicon glyphicon-pencil"></i></button>
+                                    <button class="btn btn-danger" ng-click="ctl.removeLine(row.idx)"><i class="glyphicon glyphicon-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tfoot>
+                            <tr>
+                                <td>
+                                    <input type="text" name="Number" ng-model="ctl.newLine.Number" class="form-control input-sm" placeholder="路数" required />
+                                </td>
+                                <td>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <input type="text" name="Name" ng-model="ctl.newLine.Name" class="form-control input-sm" placeholder="名称" required />
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <select class="form-control input-sm" name="GroupId" ng-model="ctl.newLine.GroupId" required ng-options="m.Key as m.Name for m in groups"></select>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="btn btn-success btn-sm" ng-disabled="lineform.$invalid" ng-click="ctl.addLine()"><i class="glyphicon glyphicon-ok"></i></button>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </form> -->
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" ng-click="$close($data)" ng-disabled="form.$invalid">
+            <i class="glyphicon glyphicon-ok-sign"></i> 确定</button>
+    <button class="btn btn-default" ng-click="$dismiss()">
+            <i class="glyphicon glyphicon-remove-sign"></i> 取消</button>
+  </div>
+</div>

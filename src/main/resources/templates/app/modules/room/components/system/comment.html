@@ -1,0 +1,72 @@
+<div ng-controller="modules/room/components/system/comment">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$dismiss()">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+        </button>
+        <h3 class="modal-title">
+            <i class="fa fa-user fa-fw"></i> 聊天窗口
+        </h3>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="pull-left col-md-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        头像
+                    </div>
+                </div>
+            </div>
+            <div class="pull-left col-md-9">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        aaa
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="pull-right col-md-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        头像
+                    </div>
+                </div>
+            </div>
+            <div class="pull-right col-md-9">
+                <div class="panel panel-info">
+                    <div class="panel-body bg-info">
+                        aaa
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="pull-right col-md-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        头像
+                    </div>
+                </div>
+            </div>
+            <div class="pull-right col-md-9">
+                <div class="panel panel-info">
+                    <div class="panel-body bg-info">
+                        aaa
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="row">
+            <div class="col-md-10">
+                <textarea class="form-control" rows="2" style="resize:none" ng-model="message"></textarea>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-default" ng-click="send()" ng-disabled="!message||message===''">发送</button>
+            </div>
+        </div>
+    </div>
+</div>
