@@ -1030,6 +1030,7 @@ define('modules/room/controllers/rooms', ['modules/room/module'], function(modul
             floorname: $scope.current.floorname
           }
         }).result.then(function(data) {
+          console.log(data);
           delete data.buildingName;
           data.floorid = $scope.current.id;
           httpService.post('/roomhotel/addRoomHotel', data).then(function(result) {
@@ -1045,7 +1046,25 @@ define('modules/room/controllers/rooms', ['modules/room/module'], function(modul
             NumberEnd: 10
           }
         }).result.then(function(data) {
-          console.log(data);
+          var dataArr = [];
+          var len = data.NumberEnd - data.NumberStart;
+          for (let i = 0; i <= len; i++) {
+            var tempData = {
+              floorid: $scope.current.id,
+              floorname: $scope.current.floorname,
+              rmtypename: data.rmtypename,
+              roomip: data.Ip1 + '.' + data.Ip2 + '.' + data.Ip3 + '.' + (data.Ip4s + i),
+              roomnum: data.NumberStart + i,
+              roomtypeid: data.roomtypeid,
+            };
+            dataArr.push(tempData);
+          }
+          console.log(JSON.stringify(dataArr));
+          httpService.post('/roomhotel/addRoomHotelBatch', {
+            roomHotelList: dataArr
+          }).then(function(result) {
+            me.tableParams.reload();
+          });
         });
       };
       this.edit = function(room) {
@@ -1113,7 +1132,7 @@ define('modules/room/controllers/roomForm', ['modules/room/module'], function(mo
         for (var i = 0; i < $scope.roomTypes.length; i++) {
           var item = $scope.roomTypes[i];
           if (item.rmtypeid == roomtypeid) {
-            $scope.data.rmtypename = item.rmtypename;
+            $scope.$data.rmtypename = item.rmtypename;
             break;
           }
         }
@@ -1472,7 +1491,7 @@ define('modules/room/controllers/roomRange', ['modules/room/module'], function(m
         for (var i = 0; i < $scope.roomTypes.length; i++) {
           var item = $scope.roomTypes[i];
           if (item.rmtypeid == roomtypeid) {
-            $scope.data.rmtypename = item.rmtypename;
+            $scope.$data.rmtypename = item.rmtypename;
             break;
           }
         }
