@@ -20,7 +20,8 @@
       <td title="'操作'">
         <div class="btn-group btn-group-xs">
           <button class="btn btn-info" ng-click="me.default(row.buildingId)">
-            <i class="glyphicon glyphicon-unchecked"></i>
+            <i ng-if="!row.sysDefault" class="glyphicon glyphicon-unchecked"></i>
+            <i ng-if="row.sysDefault" class="glyphicon glyphicon-check"></i>
           </button>
           <button class="btn btn-default" ng-click="me.edit(row)">
             <i class="glyphicon glyphicon-pencil"></i>
